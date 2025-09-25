@@ -2,7 +2,6 @@ import { useAppStore } from '@/core/StateManager'
 
 export class GameUI {
   private container: HTMLElement
-  private isInitialized = false
 
   constructor() {
     this.container = document.createElement('div')
@@ -27,7 +26,6 @@ export class GameUI {
     this.createNotificationSystem()
     this.setupStateSubscription()
 
-    this.isInitialized = true
     console.log('🖥️ Game UI initialized')
   }
 

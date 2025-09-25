@@ -22,10 +22,8 @@ export class WorkerManager {
 
   private async createWorker(type: WorkerType): Promise<void> {
     try {
-      const worker = new Worker(
-        new URL(`@/workers/${type}.worker.ts`, import.meta.url),
-        { type: 'module' }
-      )
+      const workerUrl = new URL(`../workers/${type}.worker.ts`, import.meta.url)
+      const worker = new Worker(workerUrl, { type: 'module' })
 
       const workerInfo: WorkerInfo = {
         worker,
@@ -116,7 +114,7 @@ export class WorkerManager {
       }
     } else {
       // Terminate all workers
-      for (const [type, info] of this.workers) {
+      for (const [, info] of this.workers) {
         info.worker.terminate()
       }
       this.workers.clear()

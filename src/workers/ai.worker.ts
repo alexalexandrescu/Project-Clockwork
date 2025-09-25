@@ -1,7 +1,6 @@
 import { WorkerMessage } from '@/types'
 
 class AIWorker {
-  private isInitialized = false
 
   constructor() {
     self.addEventListener('message', this.handleMessage.bind(this))
@@ -26,8 +25,6 @@ class AIWorker {
   }
 
   private initialize(): void {
-    this.isInitialized = true
-
     this.postMessage({
       id: 'init-response',
       type: 'ready',

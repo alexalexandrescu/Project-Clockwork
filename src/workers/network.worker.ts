@@ -1,11 +1,9 @@
 import Peer from 'peerjs'
-import { WorkerMessage, NetworkEvent } from '@/types'
+import { WorkerMessage } from '@/types'
 
 class NetworkWorker {
   private peer: Peer | null = null
   private connections: Map<string, any> = new Map()
-  private isInitialized = false
-  private isHost = false
 
   constructor() {
     self.addEventListener('message', this.handleMessage.bind(this))
@@ -19,16 +17,16 @@ class NetworkWorker {
         this.initialize()
         break
       case 'host-room':
-        this.hostRoom(id, payload)
+        this.hostRoom(id, payload as { roomId: string })
         break
       case 'join-room':
-        this.joinRoom(id, payload)
+        this.joinRoom(id, payload as { roomId: string })
         break
       case 'broadcast':
-        this.broadcast(id, payload)
+        this.broadcast(id, payload as { peerId: string; payload: any })
         break
       case 'send-to-peer':
-        this.sendToPeer(id, payload)
+        this.sendToPeer(id, payload as { peerId: string; payload: any })
         break
       case 'disconnect':
         this.disconnect(id)
@@ -48,7 +46,6 @@ class NetworkWorker {
       })
 
       this.peer.on('open', (id) => {
-        this.isInitialized = true
         this.postMessage({
           id: 'peer-ready',
           type: 'peer-connected',
@@ -88,10 +85,10 @@ class NetworkWorker {
     }
   }
 
-  private hostRoom(messageId: string, data: any): void {
+  private hostRoom(messageId: string, data: { roomId: string }): void {
     if (!this.peer) return
 
-    this.isHost = true
+    console.log('Hosting room:', data.roomId)
     const roomId = this.peer.id
 
     this.postMessage({

@@ -31,7 +31,6 @@ class GameDatabase extends Dexie {
 
 class DatabaseWorker {
   private db: GameDatabase
-  private isInitialized = false
 
   constructor() {
     this.db = new GameDatabase()
@@ -46,19 +45,19 @@ class DatabaseWorker {
         this.initialize()
         break
       case 'save':
-        this.saveData(id, payload)
+        this.saveData(id, payload as { key: string; value: unknown })
         break
       case 'load':
-        this.loadData(id, payload)
+        this.loadData(id, payload as { key: string })
         break
       case 'savePlayer':
-        this.savePlayer(id, payload)
+        this.savePlayer(id, payload as PlayerData)
         break
       case 'loadPlayers':
         this.loadPlayers(id)
         break
       case 'clear':
-        this.clearData(id, payload)
+        this.clearData(id, payload as { table?: string })
         break
       default:
         console.warn('Unknown database worker message type:', type)
@@ -68,7 +67,6 @@ class DatabaseWorker {
   private async initialize(): Promise<void> {
     try {
       await this.db.open()
-      this.isInitialized = true
 
       this.postMessage({
         id: 'init-response',

@@ -11,22 +11,27 @@ global.Worker = vi.fn().mockImplementation(() => ({
 }))
 
 // Mock WebRTC
-global.RTCPeerConnection = vi.fn().mockImplementation(() => ({
-  createOffer: vi.fn(),
-  createAnswer: vi.fn(),
-  setLocalDescription: vi.fn(),
-  setRemoteDescription: vi.fn(),
-  addIceCandidate: vi.fn(),
-  createDataChannel: vi.fn(),
-  addEventListener: vi.fn(),
-  close: vi.fn()
-}))
+class MockRTCPeerConnection {
+  static generateCertificate = vi.fn()
+  
+  createOffer = vi.fn()
+  createAnswer = vi.fn()
+  setLocalDescription = vi.fn()
+  setRemoteDescription = vi.fn()
+  addIceCandidate = vi.fn()
+  createDataChannel = vi.fn()
+  addEventListener = vi.fn()
+  close = vi.fn()
+}
+
+global.RTCPeerConnection = MockRTCPeerConnection as any
 
 // Mock IndexedDB
 const mockIndexedDB = {
   open: vi.fn(),
   deleteDatabase: vi.fn(),
-  cmp: vi.fn()
+  cmp: vi.fn(),
+  databases: vi.fn().mockResolvedValue([])
 }
 
 global.indexedDB = mockIndexedDB

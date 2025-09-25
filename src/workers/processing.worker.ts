@@ -1,7 +1,6 @@
 import { WorkerMessage } from '@/types'
 
 class ProcessingWorker {
-  private isInitialized = false
   private taskQueue: Array<{ id: string; task: () => Promise<unknown> }> = []
   private isProcessing = false
 
@@ -17,16 +16,16 @@ class ProcessingWorker {
         this.initialize()
         break
       case 'process-calculations':
-        this.processCalculations(id, payload)
+        this.processCalculations(id, payload as { calculations: { type: string; params: unknown }[] })
         break
       case 'optimize-path':
-        this.optimizePath(id, payload)
+        this.optimizePath(id, payload as { start: { x: number; y: number }; end: { x: number; y: number }; obstacles: { x: number; y: number; radius: number }[] })
         break
       case 'compress-data':
-        this.compressData(id, payload)
+        this.compressData(id, payload as { data: unknown; algorithm: string })
         break
       case 'generate-noise':
-        this.generateNoise(id, payload)
+        this.generateNoise(id, payload as { width: number; height: number; scale: number })
         break
       default:
         console.warn('Unknown processing worker message type:', type)
@@ -34,7 +33,6 @@ class ProcessingWorker {
   }
 
   private initialize(): void {
-    this.isInitialized = true
 
     this.postMessage({
       id: 'init-response',

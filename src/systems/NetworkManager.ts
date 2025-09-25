@@ -1,5 +1,3 @@
-import { NetworkEvent } from '@/types'
-
 export class NetworkManager {
   private isInitialized = false
   private roomId: string | null = null
@@ -18,8 +16,9 @@ export class NetworkManager {
 
   private setupEventListeners(): void {
     // Listen to network worker events
-    window.addEventListener('worker-network', (event: CustomEvent) => {
-      this.handleNetworkEvent(event.detail)
+    window.addEventListener('worker-network', (event: Event) => {
+      const customEvent = event as CustomEvent
+      this.handleNetworkEvent(customEvent.detail)
     })
   }
 

@@ -1,14 +1,12 @@
 import { GameCore } from '@/core/GameCore'
-import { StateManager } from '@/core/StateManager'
 import { WorkerManager } from '@/core/WorkerManager'
 import { NetworkManager } from '@/systems/NetworkManager'
 import '@/assets/styles/global.css'
 
 class Application {
-  private gameCore: GameCore
-  private stateManager: StateManager
-  private workerManager: WorkerManager
-  private networkManager: NetworkManager
+  private gameCore!: GameCore
+  private workerManager!: WorkerManager
+  private networkManager!: NetworkManager
 
   constructor() {
     this.initializeCore()
@@ -17,7 +15,6 @@ class Application {
   private async initializeCore(): Promise<void> {
     try {
       // Initialize core systems
-      this.stateManager = new StateManager()
       this.workerManager = new WorkerManager()
       this.networkManager = new NetworkManager()
 
