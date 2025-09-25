@@ -1,0 +1,57 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "installCommand": "pnpm install",
+  "framework": "vite",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "develop": false
+    }
+  },
+  "env": {
+    "VITE_APP_TITLE": "Project Clockwork",
+    "VITE_API_BASE_URL": "https://api.projectclockwork.dev"
+  },
+  "build": {
+    "env": {
+      "VITE_ENABLE_DEBUG": "false"
+    }
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/workers/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "trailingSlash": false
+}

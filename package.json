@@ -1,0 +1,61 @@
+{
+  "name": "project-clockwork",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A modern web application platform with real-time collaboration and immersive user experiences",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "biome lint src/",
+    "lint:fix": "biome lint --apply src/",
+    "format": "biome format src/",
+    "format:fix": "biome format --write src/",
+    "check": "biome check src/",
+    "check:fix": "biome check --apply src/",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0",
+    "zustand": "^4.4.6",
+    "dexie": "^3.2.4",
+    "peerjs": "^1.5.2",
+    "immer": "^10.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-pwa": "^0.17.4",
+    "workbox-window": "^7.0.0",
+    "vitest": "^1.1.0",
+    "@vitest/ui": "^1.1.0",
+    "@vitest/coverage-v8": "^1.1.0"
+  },
+  "keywords": [
+    "typescript",
+    "phaser",
+    "game-engine",
+    "webrtc",
+    "p2p",
+    "web-workers",
+    "vite",
+    "modern-web-app"
+  ],
+  "author": "Project Clockwork Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/project-clockwork.git"
+  }
+}

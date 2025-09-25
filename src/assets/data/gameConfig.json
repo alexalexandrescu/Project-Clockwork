@@ -1,0 +1,45 @@
+{
+  "game": {
+    "title": "Project Clockwork",
+    "version": "0.1.0",
+    "maxPlayers": 8,
+    "worldSize": {
+      "width": 2000,
+      "height": 2000
+    }
+  },
+  "graphics": {
+    "tileSize": 32,
+    "renderDistance": 1000,
+    "enableShadows": true,
+    "enableParticles": true
+  },
+  "network": {
+    "enableP2P": true,
+    "maxConnections": 7,
+    "heartbeatInterval": 5000,
+    "connectionTimeout": 30000
+  },
+  "ai": {
+    "enableAI": true,
+    "updateFrequency": 100,
+    "maxNPCs": 50
+  },
+  "audio": {
+    "masterVolume": 0.8,
+    "sfxVolume": 0.6,
+    "musicVolume": 0.4
+  },
+  "input": {
+    "keyBindings": {
+      "moveUp": ["KeyW", "ArrowUp"],
+      "moveDown": ["KeyS", "ArrowDown"],
+      "moveLeft": ["KeyA", "ArrowLeft"],
+      "moveRight": ["KeyD", "ArrowRight"],
+      "interact": ["KeyE"],
+      "menu": ["Escape"],
+      "inventory": ["KeyI"],
+      "chat": ["Enter"]
+    }
+  }
+}

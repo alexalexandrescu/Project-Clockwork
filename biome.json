@@ -1,0 +1,95 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noArrayIndexKey": "off"
+      },
+      "style": {
+        "useConst": "error",
+        "useTemplate": "error",
+        "noNegationElse": "error",
+        "useShorthandPropertyAssignment": "error"
+      },
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "noUnreachable": "error",
+        "useHookAtTopLevel": "error"
+      },
+      "performance": {
+        "noDelete": "error"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": {
+          "level": "warn",
+          "options": {
+            "maxAllowedComplexity": 15
+          }
+        },
+        "noUselessFragments": "error"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "error"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf",
+    "ignore": [
+      "dist/**",
+      "build/**",
+      "coverage/**",
+      "node_modules/**",
+      "*.min.js"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "trailingComma": "es5",
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "arrowParentheses": "asNeeded"
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentWidth": 2
+    }
+  },
+  "files": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "*.ts",
+      "*.tsx",
+      "*.js",
+      "*.json"
+    ],
+    "ignore": [
+      "dist/**",
+      "build/**",
+      "coverage/**",
+      "node_modules/**",
+      "*.min.js",
+      "public/**",
+      ".git/**"
+    ]
+  }
+}
