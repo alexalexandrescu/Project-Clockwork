@@ -12,8 +12,7 @@
   },
   "env": {
     "VITE_APP_TITLE": "Project Clockwork",
-    "VITE_API_BASE_URL": "https://api.projectclockwork.dev",
-    "ENABLE_EXPERIMENTAL_COREPACK": "1"
+    "VITE_API_BASE_URL": "https://api.projectclockwork.dev"
   },
   "build": {
     "env": {

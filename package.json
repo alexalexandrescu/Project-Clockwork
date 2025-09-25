@@ -5,10 +5,6 @@
   "type": "module",
   "description": "A modern web application platform with real-time collaboration and immersive user experiences",
   "packageManager": "pnpm@7.5.1",
-  "engines": {
-    "node": "20.x",
-    "pnpm": "^7.5.1"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
