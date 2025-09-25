@@ -6,7 +6,7 @@
   "description": "A modern web application platform with real-time collaboration and immersive user experiences",
   "packageManager": "pnpm@8.15.0",
   "engines": {
-    "node": ">=18.0.0",
+    "node": "20.x",
     "pnpm": ">=6.0.0"
   },
   "scripts": {
