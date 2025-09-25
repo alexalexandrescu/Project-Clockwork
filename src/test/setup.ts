@@ -13,7 +13,7 @@ global.Worker = vi.fn().mockImplementation(() => ({
 // Mock WebRTC
 class MockRTCPeerConnection {
   static generateCertificate = vi.fn()
-  
+
   createOffer = vi.fn()
   createAnswer = vi.fn()
   setLocalDescription = vi.fn()
