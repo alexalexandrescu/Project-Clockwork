@@ -1,0 +1,221 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Entity type definitions and schemas for RPG game data validation",
+
+  "entityTypes": {
+    "npc": {
+      "description": "Non-player character definition",
+      "required": ["id", "name", "type", "locationId", "personality"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["merchant", "innkeeper", "guard", "citizen", "questgiver", "enemy"] },
+        "templateId": { "type": "string" },
+        "locationId": { "type": "string" },
+        "personality": {
+          "type": "object",
+          "required": ["traits", "mood"],
+          "properties": {
+            "traits": { "type": "array", "items": { "type": "string" } },
+            "mood": { "type": "string", "enum": ["friendly", "neutral", "grumpy", "suspicious", "cheerful"] }
+          }
+        },
+        "dialogue": {
+          "type": "object",
+          "properties": {
+            "greeting": { "type": "array", "items": { "type": "string" } },
+            "topics": { "type": "object" },
+            "farewell": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "schedule": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["time", "action", "location"],
+            "properties": {
+              "time": { "type": "string" },
+              "action": { "type": "string" },
+              "location": { "type": "string" }
+            }
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "health": { "type": "number" },
+            "attack": { "type": "number" },
+            "defense": { "type": "number" },
+            "level": { "type": "number" }
+          }
+        }
+      }
+    },
+
+    "item": {
+      "description": "Item definition",
+      "required": ["id", "name", "type", "category"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "type": { "type": "string", "enum": ["weapon", "armor", "consumable", "quest", "misc", "crafting"] },
+        "category": { "type": "string" },
+        "rarity": { "type": "string", "enum": ["common", "uncommon", "rare", "epic", "legendary"] },
+        "value": { "type": "number" },
+        "stackable": { "type": "boolean" },
+        "maxStack": { "type": "number" },
+        "stats": { "type": "object" },
+        "effects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string" },
+              "value": { "type": "number" },
+              "duration": { "type": "number" }
+            }
+          }
+        },
+        "requirements": {
+          "type": "object",
+          "properties": {
+            "level": { "type": "number" },
+            "strength": { "type": "number" },
+            "intelligence": { "type": "number" }
+          }
+        }
+      }
+    },
+
+    "quest": {
+      "description": "Quest definition",
+      "required": ["id", "name", "type", "objectives"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "type": { "type": "string", "enum": ["tutorial", "fetch", "combat", "crafting", "exploration", "party", "story"] },
+        "difficulty": { "type": "string", "enum": ["beginner", "easy", "medium", "hard", "expert"] },
+        "questGiverId": { "type": "string" },
+        "requiredLevel": { "type": "number" },
+        "partySize": { "type": "number" },
+        "objectives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "target", "count"],
+            "properties": {
+              "type": { "type": "string" },
+              "target": { "type": "string" },
+              "count": { "type": "number" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "rewards": {
+          "type": "object",
+          "properties": {
+            "gold": { "type": "number" },
+            "experience": { "type": "number" },
+            "items": { "type": "array", "items": { "type": "string" } },
+            "reputation": { "type": "number" }
+          }
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "building": {
+      "description": "Building definition",
+      "required": ["id", "name", "type", "cityId"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "cityId": { "type": "string" },
+        "description": { "type": "string" },
+        "services": { "type": "array", "items": { "type": "string" } },
+        "occupants": { "type": "array", "items": { "type": "string" } },
+        "interiorDescription": { "type": "string" }
+      }
+    },
+
+    "city": {
+      "description": "City definition",
+      "required": ["id", "name", "realmId"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "realmId": { "type": "string" },
+        "description": { "type": "string" },
+        "population": { "type": "number" },
+        "climate": { "type": "string" },
+        "buildings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "realm": {
+      "description": "Realm definition",
+      "required": ["id", "name", "theme"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "theme": { "type": "string" },
+        "description": { "type": "string" },
+        "level": { "type": "string" },
+        "cities": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "food": {
+      "description": "Food item definition",
+      "required": ["id", "name", "effects"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "value": { "type": "number" },
+        "rarity": { "type": "string", "enum": ["common", "uncommon", "rare"] },
+        "effects": {
+          "type": "object",
+          "properties": {
+            "health": { "type": "number" },
+            "stamina": { "type": "number" },
+            "mana": { "type": "number" },
+            "buffs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "stat": { "type": "string" },
+                  "value": { "type": "number" },
+                  "duration": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "stackable": { "type": "boolean" },
+        "maxStack": { "type": "number" }
+      }
+    }
+  },
+
+  "enumerations": {
+    "rarities": ["common", "uncommon", "rare", "epic", "legendary"],
+    "itemTypes": ["weapon", "armor", "consumable", "quest", "misc", "crafting"],
+    "questTypes": ["tutorial", "fetch", "combat", "crafting", "exploration", "party", "story"],
+    "npcTypes": ["merchant", "innkeeper", "guard", "citizen", "questgiver", "enemy"],
+    "moods": ["friendly", "neutral", "grumpy", "suspicious", "cheerful"],
+    "difficulties": ["beginner", "easy", "medium", "hard", "expert"]
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "version": "1.0.0",
+  "description": "Item definitions including weapons, armor, consumables, quest items, and miscellaneous",
+
+  "items": [
+    {
+      "id": "iron_sword",
+      "name": "Iron Sword",
+      "description": "A sturdy iron sword with a simple crossguard. Well-balanced and reliable for beginners.",
+      "type": "weapon",
+      "category": "melee",
+      "rarity": "common",
+      "value": 50,
+      "stackable": false,
+      "stats": {
+        "attack": 10,
+        "durability": 100
+      },
+      "requirements": {
+        "level": 1,
+        "strength": 5
+      },
+      "weight": 3.5
+    },
+    {
+      "id": "steel_sword",
+      "name": "Steel Sword",
+      "description": "A finely crafted steel blade that holds its edge well. Preferred by experienced warriors.",
+      "type": "weapon",
+      "category": "melee",
+      "rarity": "uncommon",
+      "value": 150,
+      "stackable": false,
+      "stats": {
+        "attack": 18,
+        "durability": 150
+      },
+      "requirements": {
+        "level": 5,
+        "strength": 8
+      },
+      "weight": 4.0
+    },
+    {
+      "id": "dwarven_axe",
+      "name": "Dwarven Battle Axe",
+      "description": "A heavy axe forged by dwarven smiths. Each strike carries tremendous force.",
+      "type": "weapon",
+      "category": "melee",
+      "rarity": "rare",
+      "value": 300,
+      "stackable": false,
+      "stats": {
+        "attack": 25,
+        "durability": 200,
+        "critChance": 0.15
+      },
+      "requirements": {
+        "level": 8,
+        "strength": 12
+      },
+      "weight": 6.0
+    },
+    {
+      "id": "rusty_dagger",
+      "name": "Rusty Dagger",
+      "description": "An old, rusted dagger. Better than nothing, but barely.",
+      "type": "weapon",
+      "category": "melee",
+      "rarity": "common",
+      "value": 10,
+      "stackable": false,
+      "stats": {
+        "attack": 5,
+        "durability": 30
+      },
+      "requirements": {
+        "level": 1
+      },
+      "weight": 0.5
+    },
+    {
+      "id": "enchanted_dagger",
+      "name": "Enchanted Dagger",
+      "description": "A mystical dagger that glows with a faint blue light. Never needs sharpening.",
+      "type": "weapon",
+      "category": "melee",
+      "rarity": "epic",
+      "value": 500,
+      "stackable": false,
+      "stats": {
+        "attack": 22,
+        "durability": 999,
+        "magicDamage": 8
+      },
+      "effects": [
+        {
+          "type": "mana_restore",
+          "value": 2,
+          "trigger": "on_hit"
+        }
+      ],
+      "requirements": {
+        "level": 10,
+        "intelligence": 6
+      },
+      "weight": 0.8
+    },
+    {
+      "id": "leather_armor",
+      "name": "Leather Armor",
+      "description": "Basic leather armor that provides light protection without restricting movement.",
+      "type": "armor",
+      "category": "light",
+      "rarity": "common",
+      "value": 40,
+      "stackable": false,
+      "stats": {
+        "defense": 5,
+        "durability": 80
+      },
+      "requirements": {
+        "level": 1
+      },
+      "weight": 5.0
+    },
+    {
+      "id": "chainmail",
+      "name": "Chainmail Armor",
+      "description": "Interlocking metal rings provide solid protection. Popular among guards and soldiers.",
+      "type": "armor",
+      "category": "medium",
+      "rarity": "uncommon",
+      "value": 120,
+      "stackable": false,
+      "stats": {
+        "defense": 12,
+        "durability": 150
+      },
+      "requirements": {
+        "level": 4,
+        "strength": 7
+      },
+      "weight": 15.0
+    },
+    {
+      "id": "steel_armor",
+      "name": "Steel Plate Armor",
+      "description": "Full plate armor made of tempered steel. Provides excellent protection but is heavy.",
+      "type": "armor",
+      "category": "heavy",
+      "rarity": "rare",
+      "value": 400,
+      "stackable": false,
+      "stats": {
+        "defense": 25,
+        "durability": 250
+      },
+      "requirements": {
+        "level": 10,
+        "strength": 14
+      },
+      "weight": 30.0
+    },
+    {
+      "id": "steel_shield",
+      "name": "Steel Shield",
+      "description": "A sturdy shield emblazoned with the Ironforge crest. Can block most attacks.",
+      "type": "armor",
+      "category": "shield",
+      "rarity": "uncommon",
+      "value": 80,
+      "stackable": false,
+      "stats": {
+        "defense": 8,
+        "blockChance": 0.20,
+        "durability": 120
+      },
+      "requirements": {
+        "level": 3,
+        "strength": 6
+      },
+      "weight": 5.0
+    },
+    {
+      "id": "health_potion",
+      "name": "Health Potion",
+      "description": "A red liquid in a glass vial. Restores health when consumed.",
+      "type": "consumable",
+      "category": "potion",
+      "rarity": "common",
+      "value": 20,
+      "stackable": true,
+      "maxStack": 20,
+      "effects": [
+        {
+          "type": "heal",
+          "value": 50,
+          "duration": 0
+        }
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "mana_potion",
+      "name": "Mana Potion",
+      "description": "A blue liquid that shimmers with magical energy. Restores mana when consumed.",
+      "type": "consumable",
+      "category": "potion",
+      "rarity": "common",
+      "value": 20,
+      "stackable": true,
+      "maxStack": 20,
+      "effects": [
+        {
+          "type": "restore_mana",
+          "value": 50,
+          "duration": 0
+        }
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "stamina_potion",
+      "name": "Stamina Potion",
+      "description": "A green potion that provides a burst of energy. Restores stamina.",
+      "type": "consumable",
+      "category": "potion",
+      "rarity": "common",
+      "value": 15,
+      "stackable": true,
+      "maxStack": 20,
+      "effects": [
+        {
+          "type": "restore_stamina",
+          "value": 60,
+          "duration": 0
+        }
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "greater_health_potion",
+      "name": "Greater Health Potion",
+      "description": "A potent healing potion that restores significantly more health than standard potions.",
+      "type": "consumable",
+      "category": "potion",
+      "rarity": "uncommon",
+      "value": 60,
+      "stackable": true,
+      "maxStack": 10,
+      "effects": [
+        {
+          "type": "heal",
+          "value": 150,
+          "duration": 0
+        }
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "holy_water",
+      "name": "Holy Water",
+      "description": "Water blessed by temple priests. Effective against undead creatures.",
+      "type": "consumable",
+      "category": "special",
+      "rarity": "uncommon",
+      "value": 30,
+      "stackable": true,
+      "maxStack": 10,
+      "effects": [
+        {
+          "type": "damage_undead",
+          "value": 40,
+          "duration": 0
+        }
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "antidote",
+      "name": "Antidote",
+      "description": "A clear liquid that neutralizes most common poisons.",
+      "type": "consumable",
+      "category": "potion",
+      "rarity": "uncommon",
+      "value": 25,
+      "stackable": true,
+      "maxStack": 10,
+      "effects": [
+        {
+          "type": "cure_poison",
+          "value": 1,
+          "duration": 0
+        }
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "iron_ore",
+      "name": "Iron Ore",
+      "description": "Raw iron ore, useful for blacksmithing. Can be smelted into iron ingots.",
+      "type": "crafting",
+      "category": "material",
+      "rarity": "common",
+      "value": 10,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 2.0
+    },
+    {
+      "id": "iron_ingot",
+      "name": "Iron Ingot",
+      "description": "Smelted iron, ready for forging. Used to create weapons and armor.",
+      "type": "crafting",
+      "category": "material",
+      "rarity": "common",
+      "value": 15,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 1.5
+    },
+    {
+      "id": "rope",
+      "name": "Sturdy Rope",
+      "description": "50 feet of strong hemp rope. Essential for any adventurer.",
+      "type": "misc",
+      "category": "tool",
+      "rarity": "common",
+      "value": 5,
+      "stackable": true,
+      "maxStack": 5,
+      "weight": 2.0
+    },
+    {
+      "id": "torch",
+      "name": "Torch",
+      "description": "A wooden torch wrapped with oil-soaked cloth. Provides light in dark places.",
+      "type": "misc",
+      "category": "tool",
+      "rarity": "common",
+      "value": 1,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.5
+    },
+    {
+      "id": "lockpick_set",
+      "name": "Lockpick Set",
+      "description": "A set of fine picks for opening locks. Requires skill to use effectively.",
+      "type": "misc",
+      "category": "tool",
+      "rarity": "uncommon",
+      "value": 25,
+      "stackable": false,
+      "weight": 0.3
+    },
+    {
+      "id": "backpack",
+      "name": "Adventurer's Backpack",
+      "description": "A sturdy backpack that increases carrying capacity.",
+      "type": "misc",
+      "category": "equipment",
+      "rarity": "common",
+      "value": 30,
+      "stackable": false,
+      "stats": {
+        "carryCapacity": 20
+      },
+      "weight": 2.0
+    },
+    {
+      "id": "climbing_rope",
+      "name": "Climbing Rope",
+      "description": "Specialized rope with metal hooks. Essential for mountain climbing.",
+      "type": "misc",
+      "category": "tool",
+      "rarity": "common",
+      "value": 15,
+      "stackable": true,
+      "maxStack": 3,
+      "weight": 3.0
+    },
+    {
+      "id": "winter_cloak",
+      "name": "Winter Cloak",
+      "description": "A thick fur-lined cloak that protects against extreme cold.",
+      "type": "armor",
+      "category": "clothing",
+      "rarity": "common",
+      "value": 35,
+      "stackable": false,
+      "stats": {
+        "coldResistance": 20
+      },
+      "weight": 3.0
+    },
+    {
+      "id": "desert_cloak",
+      "name": "Desert Cloak",
+      "description": "Light cloth that reflects sunlight. Essential for desert travel.",
+      "type": "armor",
+      "category": "clothing",
+      "rarity": "common",
+      "value": 30,
+      "stackable": false,
+      "stats": {
+        "heatResistance": 20
+      },
+      "weight": 1.5
+    },
+    {
+      "id": "water_skin",
+      "name": "Water Skin",
+      "description": "A leather container for carrying water. Holds enough for a day of travel.",
+      "type": "misc",
+      "category": "container",
+      "rarity": "common",
+      "value": 5,
+      "stackable": true,
+      "maxStack": 5,
+      "weight": 1.0
+    },
+    {
+      "id": "survival_kit",
+      "name": "Survival Kit",
+      "description": "Contains water purification tablets, emergency rations, and signal flares.",
+      "type": "misc",
+      "category": "tool",
+      "rarity": "uncommon",
+      "value": 45,
+      "stackable": false,
+      "weight": 2.5
+    },
+    {
+      "id": "ring_of_protection",
+      "name": "Ring of Protection",
+      "description": "A silver ring etched with protective runes. Grants minor magical defense.",
+      "type": "armor",
+      "category": "accessory",
+      "rarity": "rare",
+      "value": 250,
+      "stackable": false,
+      "stats": {
+        "defense": 3,
+        "magicResistance": 10
+      },
+      "requirements": {
+        "level": 5
+      },
+      "weight": 0.1
+    },
+    {
+      "id": "healing_amulet",
+      "name": "Amulet of Regeneration",
+      "description": "A golden amulet that slowly heals wounds over time.",
+      "type": "armor",
+      "category": "accessory",
+      "rarity": "rare",
+      "value": 300,
+      "stackable": false,
+      "effects": [
+        {
+          "type": "regeneration",
+          "value": 2,
+          "duration": -1
+        }
+      ],
+      "requirements": {
+        "level": 6
+      },
+      "weight": 0.2
+    },
+    {
+      "id": "ancient_scroll",
+      "name": "Ancient Scroll",
+      "description": "A scroll written in an ancient language. Might be valuable to scholars.",
+      "type": "quest",
+      "category": "artifact",
+      "rarity": "rare",
+      "value": 100,
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.1
+    },
+    {
+      "id": "crystal_shard",
+      "name": "Crystal Shard",
+      "description": "A glowing crystal shard from the Crystal Caves. Hums with magical energy.",
+      "type": "quest",
+      "category": "artifact",
+      "rarity": "rare",
+      "value": 150,
+      "stackable": true,
+      "maxStack": 20,
+      "weight": 0.3
+    },
+    {
+      "id": "rat_tail",
+      "name": "Rat Tail",
+      "description": "The tail from a giant rat. Some alchemists pay for these.",
+      "type": "misc",
+      "category": "loot",
+      "rarity": "common",
+      "value": 2,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.1
+    },
+    {
+      "id": "rat_pelt",
+      "name": "Rat Pelt",
+      "description": "Fur from a large rat. Not particularly valuable, but can be sold.",
+      "type": "misc",
+      "category": "loot",
+      "rarity": "common",
+      "value": 3,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.2
+    },
+    {
+      "id": "wolf_pelt",
+      "name": "Wolf Pelt",
+      "description": "A high-quality wolf pelt. Warm and valuable.",
+      "type": "misc",
+      "category": "loot",
+      "rarity": "uncommon",
+      "value": 20,
+      "stackable": true,
+      "maxStack": 20,
+      "weight": 1.0
+    },
+    {
+      "id": "wolf_fang",
+      "name": "Wolf Fang",
+      "description": "A sharp wolf fang. Can be used in crafting or sold to collectors.",
+      "type": "crafting",
+      "category": "material",
+      "rarity": "uncommon",
+      "value": 8,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.1
+    },
+    {
+      "id": "goblin_ear",
+      "name": "Goblin Ear",
+      "description": "Proof of a defeated goblin. Guards pay bounties for these.",
+      "type": "quest",
+      "category": "bounty",
+      "rarity": "common",
+      "value": 5,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.1
+    },
+    {
+      "id": "bone_fragment",
+      "name": "Bone Fragment",
+      "description": "A fragment of bone from an undead creature. Has a faint unholy aura.",
+      "type": "misc",
+      "category": "loot",
+      "rarity": "common",
+      "value": 4,
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.2
+    },
+    {
+      "id": "blessing_scroll",
+      "name": "Scroll of Blessing",
+      "description": "A scroll inscribed with holy words. Grants a temporary blessing when read.",
+      "type": "consumable",
+      "category": "scroll",
+      "rarity": "uncommon",
+      "value": 40,
+      "stackable": true,
+      "maxStack": 10,
+      "effects": [
+        {
+          "type": "buff_all_stats",
+          "value": 5,
+          "duration": 600
+        }
+      ],
+      "weight": 0.1
+    },
+    {
+      "id": "map_fragment",
+      "name": "Treasure Map Fragment",
+      "description": "Part of an old treasure map. Might lead to something valuable if you find the other pieces.",
+      "type": "quest",
+      "category": "artifact",
+      "rarity": "rare",
+      "value": 50,
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.1
+    }
+  ],
+
+  "itemSets": {
+    "starter_weapons": ["iron_sword", "rusty_dagger"],
+    "advanced_weapons": ["steel_sword", "dwarven_axe", "enchanted_dagger"],
+    "basic_armor": ["leather_armor", "steel_shield"],
+    "advanced_armor": ["chainmail", "steel_armor"],
+    "potions": ["health_potion", "mana_potion", "stamina_potion", "greater_health_potion"],
+    "tools": ["rope", "torch", "lockpick_set", "climbing_rope"],
+    "quest_items": ["ancient_scroll", "crystal_shard", "goblin_ear", "map_fragment"],
+    "loot_items": ["rat_tail", "rat_pelt", "wolf_pelt", "wolf_fang", "bone_fragment"],
+    "magical_items": ["enchanted_dagger", "ring_of_protection", "healing_amulet"],
+    "crafting_materials": ["iron_ore", "iron_ingot", "wolf_fang"]
+  }
+}

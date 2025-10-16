@@ -1,0 +1,21 @@
+{
+  "name": "@rpg/mcp-testing",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "node --loader ts-node/esm src/index.ts",
+    "build": "echo 'Build not required for MCP server'",
+    "dev": "node --loader ts-node/esm --watch src/index.ts"
+  },
+  "dependencies": {
+    "@rpg/engine": "workspace:*",
+    "@rpg/data": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

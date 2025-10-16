@@ -1,0 +1,20 @@
+{
+  "name": "@rpg/data",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./content/types.json",
+    "./templates": "./content/templates.json",
+    "./world": "./content/world.json",
+    "./npcs": "./content/npcs.json",
+    "./quests": "./content/quests.json",
+    "./items": "./content/items.json",
+    "./food": "./content/food.json",
+    "./buildings": "./content/buildings.json"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.js"
+  }
+}

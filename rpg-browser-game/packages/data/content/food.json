@@ -1,0 +1,384 @@
+{
+  "version": "1.0.0",
+  "description": "Food items with stat effects and buffs",
+
+  "foods": [
+    {
+      "id": "bread",
+      "name": "Fresh Bread",
+      "description": "A warm loaf of freshly baked bread. Simple but satisfying.",
+      "value": 3,
+      "rarity": "common",
+      "effects": {
+        "health": 15,
+        "stamina": 10
+      },
+      "stackable": true,
+      "maxStack": 20,
+      "weight": 0.3
+    },
+    {
+      "id": "mountain_stew",
+      "name": "Mountain Stew",
+      "description": "A hearty stew with chunks of meat, potatoes, and vegetables. The perfect meal after a cold day.",
+      "value": 12,
+      "rarity": "common",
+      "effects": {
+        "health": 40,
+        "stamina": 30,
+        "buffs": [
+          {
+            "stat": "cold_resistance",
+            "value": 10,
+            "duration": 1800
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.8
+    },
+    {
+      "id": "iron_stew",
+      "name": "Iron Stew",
+      "description": "The Hammer & Anvil's famous stew. Secret herbs make it unforgettable.",
+      "value": 15,
+      "rarity": "uncommon",
+      "effects": {
+        "health": 50,
+        "stamina": 40,
+        "buffs": [
+          {
+            "stat": "strength",
+            "value": 2,
+            "duration": 3600
+          },
+          {
+            "stat": "defense",
+            "value": 3,
+            "duration": 3600
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 1.0
+    },
+    {
+      "id": "roasted_boar",
+      "name": "Roasted Boar",
+      "description": "Succulent roasted boar with crispy skin. A feast for warriors.",
+      "value": 18,
+      "rarity": "uncommon",
+      "effects": {
+        "health": 60,
+        "stamina": 50,
+        "buffs": [
+          {
+            "stat": "attack",
+            "value": 5,
+            "duration": 3600
+          },
+          {
+            "stat": "health_regen",
+            "value": 1,
+            "duration": 3600
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 5,
+      "weight": 1.5
+    },
+    {
+      "id": "mountain_ale",
+      "name": "Mountain Ale",
+      "description": "Strong ale brewed in the northern mountains. Warms the body and lifts the spirits.",
+      "value": 5,
+      "rarity": "common",
+      "effects": {
+        "stamina": 20,
+        "buffs": [
+          {
+            "stat": "morale",
+            "value": 5,
+            "duration": 1200
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.5
+    },
+    {
+      "id": "honey_cakes",
+      "name": "Honey Cakes",
+      "description": "Sweet cakes drizzled with golden honey. A delightful treat.",
+      "value": 8,
+      "rarity": "common",
+      "effects": {
+        "health": 25,
+        "mana": 15,
+        "buffs": [
+          {
+            "stat": "mana_regen",
+            "value": 2,
+            "duration": 1800
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 15,
+      "weight": 0.3
+    },
+    {
+      "id": "spiced_lamb",
+      "name": "Spiced Lamb",
+      "description": "Tender lamb seasoned with exotic spices from the confederacy. A culinary masterpiece.",
+      "value": 20,
+      "rarity": "rare",
+      "effects": {
+        "health": 70,
+        "stamina": 60,
+        "buffs": [
+          {
+            "stat": "all_stats",
+            "value": 3,
+            "duration": 5400
+          },
+          {
+            "stat": "experience_gain",
+            "value": 10,
+            "duration": 3600
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 5,
+      "weight": 1.2
+    },
+    {
+      "id": "seafood_platter",
+      "name": "Seafood Platter",
+      "description": "Fresh fish, shrimp, and shellfish from the morning catch. Tastes like the ocean.",
+      "value": 16,
+      "rarity": "uncommon",
+      "effects": {
+        "health": 55,
+        "stamina": 45,
+        "buffs": [
+          {
+            "stat": "agility",
+            "value": 4,
+            "duration": 3600
+          },
+          {
+            "stat": "swim_speed",
+            "value": 20,
+            "duration": 3600
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 5,
+      "weight": 1.0
+    },
+    {
+      "id": "spiced_rice",
+      "name": "Spiced Rice",
+      "description": "Fragrant rice cooked with saffron and desert herbs. Light but energizing.",
+      "value": 10,
+      "rarity": "common",
+      "effects": {
+        "stamina": 35,
+        "mana": 20,
+        "buffs": [
+          {
+            "stat": "stamina_regen",
+            "value": 2,
+            "duration": 2400
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.5
+    },
+    {
+      "id": "dates",
+      "name": "Fresh Dates",
+      "description": "Sweet dates from oasis palm trees. Nature's candy.",
+      "value": 4,
+      "rarity": "common",
+      "effects": {
+        "health": 20,
+        "stamina": 15
+      },
+      "stackable": true,
+      "maxStack": 30,
+      "weight": 0.2
+    },
+    {
+      "id": "fruit_platter",
+      "name": "Exotic Fruit Platter",
+      "description": "A colorful assortment of tropical fruits. Refreshing and healthy.",
+      "value": 14,
+      "rarity": "uncommon",
+      "effects": {
+        "health": 45,
+        "mana": 30,
+        "buffs": [
+          {
+            "stat": "health_regen",
+            "value": 2,
+            "duration": 3600
+          },
+          {
+            "stat": "poison_resistance",
+            "value": 15,
+            "duration": 3600
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.8
+    },
+    {
+      "id": "spiced_rum",
+      "name": "Spiced Rum",
+      "description": "Strong rum spiced with cinnamon and vanilla. A sailor's favorite.",
+      "value": 8,
+      "rarity": "common",
+      "effects": {
+        "stamina": 25,
+        "buffs": [
+          {
+            "stat": "courage",
+            "value": 5,
+            "duration": 1800
+          },
+          {
+            "stat": "cold_resistance",
+            "value": 5,
+            "duration": 1800
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.5
+    },
+    {
+      "id": "hot_cider",
+      "name": "Hot Cider",
+      "description": "Steaming apple cider with a hint of spice. Perfect for cold weather.",
+      "value": 6,
+      "rarity": "common",
+      "effects": {
+        "health": 20,
+        "stamina": 20,
+        "buffs": [
+          {
+            "stat": "cold_resistance",
+            "value": 15,
+            "duration": 2400
+          },
+          {
+            "stat": "warmth",
+            "value": 1,
+            "duration": 3600
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.4
+    },
+    {
+      "id": "wolf_meat",
+      "name": "Cooked Wolf Meat",
+      "description": "Tough but nutritious meat from a wolf. Tastes gamey but fills the belly.",
+      "value": 10,
+      "rarity": "common",
+      "effects": {
+        "health": 35,
+        "stamina": 40,
+        "buffs": [
+          {
+            "stat": "stamina_regen",
+            "value": 3,
+            "duration": 2400
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 10,
+      "weight": 0.6
+    },
+    {
+      "id": "trail_rations",
+      "name": "Trail Rations",
+      "description": "Preserved food designed for long journeys. Not tasty, but practical.",
+      "value": 5,
+      "rarity": "common",
+      "effects": {
+        "health": 25,
+        "stamina": 25
+      },
+      "stackable": true,
+      "maxStack": 50,
+      "weight": 0.3
+    },
+    {
+      "id": "hero_feast",
+      "name": "Hero's Feast",
+      "description": "A legendary meal fit for heroes. Provides exceptional benefits.",
+      "value": 50,
+      "rarity": "rare",
+      "effects": {
+        "health": 100,
+        "stamina": 100,
+        "mana": 50,
+        "buffs": [
+          {
+            "stat": "all_stats",
+            "value": 5,
+            "duration": 7200
+          },
+          {
+            "stat": "experience_gain",
+            "value": 20,
+            "duration": 7200
+          },
+          {
+            "stat": "luck",
+            "value": 10,
+            "duration": 7200
+          }
+        ]
+      },
+      "stackable": true,
+      "maxStack": 1,
+      "weight": 2.0
+    }
+  ],
+
+  "foodCategories": {
+    "basic": ["bread", "dates", "trail_rations"],
+    "meals": ["mountain_stew", "iron_stew", "roasted_boar", "spiced_lamb", "seafood_platter", "spiced_rice"],
+    "desserts": ["honey_cakes", "fruit_platter"],
+    "drinks": ["mountain_ale", "spiced_rum", "hot_cider"],
+    "special": ["hero_feast"],
+    "stat_boosters": ["iron_stew", "roasted_boar", "spiced_lamb", "hero_feast"],
+    "regen_foods": ["roasted_boar", "honey_cakes", "fruit_platter", "wolf_meat"]
+  },
+
+  "foodByLocation": {
+    "ironforge": ["bread", "mountain_stew", "iron_stew", "roasted_boar", "mountain_ale"],
+    "frostpeak": ["mountain_stew", "hot_cider", "wolf_meat", "trail_rations"],
+    "port_aurelia": ["seafood_platter", "spiced_rum", "honey_cakes", "fruit_platter", "spiced_lamb"],
+    "sandstone": ["spiced_rice", "dates", "trail_rations"],
+    "oasis_haven": ["dates", "fruit_platter", "fresh_water"]
+  }
+}

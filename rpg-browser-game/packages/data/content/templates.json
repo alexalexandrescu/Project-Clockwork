@@ -1,0 +1,350 @@
+{
+  "version": "1.0.0",
+  "description": "Reusable entity templates for common NPC types and enemies",
+
+  "npcTemplates": {
+    "innkeeper": {
+      "type": "innkeeper",
+      "personality": {
+        "traits": ["hospitable", "chatty", "observant"],
+        "mood": "friendly"
+      },
+      "baseDialogue": {
+        "greeting": [
+          "Welcome, traveler! Come in, come in!",
+          "Good to see you! Looking for a room or a hot meal?",
+          "Ah, another weary traveler. You've come to the right place!"
+        ],
+        "topics": {
+          "rooms": [
+            "We have comfortable rooms available. 10 gold per night, includes breakfast.",
+            "Our beds are the softest in the realm, I guarantee it!"
+          ],
+          "rumors": [
+            "I hear all sorts of things from travelers passing through...",
+            "There's been talk of strange happenings in the old ruins to the north."
+          ],
+          "food": [
+            "We serve the best stew this side of the mountains!",
+            "Our cook makes a mean roasted chicken with herbs."
+          ]
+        },
+        "farewell": [
+          "Safe travels, friend!",
+          "Come back anytime!",
+          "May your journey be swift and your coin purse heavy!"
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "open_inn", "location": "main_hall" },
+        { "time": "12:00", "action": "serve_lunch", "location": "kitchen" },
+        { "time": "18:00", "action": "serve_dinner", "location": "main_hall" },
+        { "time": "22:00", "action": "close_inn", "location": "private_quarters" }
+      ]
+    },
+
+    "blacksmith": {
+      "type": "merchant",
+      "personality": {
+        "traits": ["hardworking", "direct", "proud"],
+        "mood": "neutral"
+      },
+      "baseDialogue": {
+        "greeting": [
+          "Looking for quality weapons and armor? You've found the right smith.",
+          "I don't have time for idle chat. Here to buy or sell?",
+          "Every piece I forge is made to last. What do you need?"
+        ],
+        "topics": {
+          "services": [
+            "I can forge weapons, repair armor, and strengthen equipment.",
+            "Bring me the materials, and I'll craft you something special."
+          ],
+          "craft": [
+            "Quality work takes time. Rush jobs cost extra.",
+            "I only work with the finest metals. Bring me good ore and I'll make you something remarkable."
+          ],
+          "trade": [
+            "Show me what you've got. I'll give you a fair price.",
+            "I buy damaged equipment - I can always melt it down for parts."
+          ]
+        },
+        "farewell": [
+          "May your blade stay sharp.",
+          "Come back if you need repairs.",
+          "Good luck out there."
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_shop", "location": "forge" },
+        { "time": "12:00", "action": "lunch_break", "location": "shop" },
+        { "time": "13:00", "action": "crafting", "location": "forge" },
+        { "time": "18:00", "action": "close_shop", "location": "home" }
+      ]
+    },
+
+    "merchant": {
+      "type": "merchant",
+      "personality": {
+        "traits": ["shrewd", "friendly", "persuasive"],
+        "mood": "cheerful"
+      },
+      "baseDialogue": {
+        "greeting": [
+          "Ah, a customer! Welcome to my humble shop!",
+          "Looking for something special? I have the finest goods in the city!",
+          "Step right up! Everything you need, right here!"
+        ],
+        "topics": {
+          "goods": [
+            "I stock everything from basic supplies to rare trinkets.",
+            "Just got a new shipment from the southern trade routes!"
+          ],
+          "prices": [
+            "My prices are very reasonable, I assure you.",
+            "For you, my friend, I can offer a special discount... perhaps."
+          ],
+          "trade": [
+            "I'm always interested in exotic goods. What have you got?",
+            "Adventurers like you often find interesting items. I'll pay well for the right merchandise."
+          ]
+        },
+        "farewell": [
+          "Thank you for your business!",
+          "Come again soon!",
+          "May fortune smile upon you!"
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_shop", "location": "shop" },
+        { "time": "12:00", "action": "inventory_check", "location": "stockroom" },
+        { "time": "14:00", "action": "tending_shop", "location": "shop" },
+        { "time": "18:00", "action": "close_shop", "location": "home" }
+      ]
+    },
+
+    "guard": {
+      "type": "guard",
+      "personality": {
+        "traits": ["dutiful", "alert", "suspicious"],
+        "mood": "neutral"
+      },
+      "baseDialogue": {
+        "greeting": [
+          "State your business.",
+          "Keep moving, citizen.",
+          "Everything's under control here. Move along."
+        ],
+        "topics": {
+          "duty": [
+            "I'm here to keep the peace. Don't cause any trouble.",
+            "We guards take our duty seriously. This city is safe because of us."
+          ],
+          "trouble": [
+            "If you see anything suspicious, report it immediately.",
+            "Crime doesn't pay in this city. We catch all the troublemakers eventually."
+          ],
+          "city": [
+            "This is a good city, safe for honest folk.",
+            "Stay out of the back alleys at night. That's when the riffraff come out."
+          ]
+        },
+        "farewell": [
+          "Stay out of trouble.",
+          "Keep your nose clean.",
+          "Move along now."
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "patrol", "location": "market_square" },
+        { "time": "12:00", "action": "patrol", "location": "north_gate" },
+        { "time": "16:00", "action": "patrol", "location": "docks" },
+        { "time": "20:00", "action": "night_watch", "location": "city_walls" }
+      ],
+      "stats": {
+        "health": 120,
+        "attack": 15,
+        "defense": 18,
+        "level": 5
+      }
+    },
+
+    "citizen": {
+      "type": "citizen",
+      "personality": {
+        "traits": ["ordinary", "helpful", "busy"],
+        "mood": "friendly"
+      },
+      "baseDialogue": {
+        "greeting": [
+          "Hello there!",
+          "Good day to you!",
+          "Can I help you with something?"
+        ],
+        "topics": {
+          "city": [
+            "It's a nice place to live. Peaceful, mostly.",
+            "I've lived here all my life. It's home."
+          ],
+          "weather": [
+            "Beautiful day, isn't it?",
+            "Can't complain about the weather today!"
+          ]
+        },
+        "farewell": [
+          "Take care!",
+          "Have a good day!",
+          "Safe travels!"
+        ]
+      },
+      "schedule": [
+        { "time": "07:00", "action": "wake_up", "location": "home" },
+        { "time": "09:00", "action": "work", "location": "workplace" },
+        { "time": "17:00", "action": "leisure", "location": "town_square" },
+        { "time": "20:00", "action": "sleep", "location": "home" }
+      ]
+    },
+
+    "questgiver": {
+      "type": "questgiver",
+      "personality": {
+        "traits": ["knowledgeable", "mysterious", "helpful"],
+        "mood": "neutral"
+      },
+      "baseDialogue": {
+        "greeting": [
+          "Ah, an adventurer. I may have work for someone of your talents.",
+          "You look capable. I have a matter that requires attention.",
+          "Fortune brings you to me at an opportune time."
+        ],
+        "topics": {
+          "quest": [
+            "I have a task that needs doing. Are you interested?",
+            "This is no simple errand. It will require skill and courage."
+          ],
+          "reward": [
+            "Complete this task, and you'll be well compensated.",
+            "I reward success generously, and I never forget those who help me."
+          ]
+        },
+        "farewell": [
+          "May fortune favor you.",
+          "I'll be here when you complete the task.",
+          "Good hunting, adventurer."
+        ]
+      },
+      "schedule": [
+        { "time": "10:00", "action": "available", "location": "guild_hall" },
+        { "time": "18:00", "action": "available", "location": "tavern" },
+        { "time": "22:00", "action": "rest", "location": "home" }
+      ]
+    }
+  },
+
+  "enemyTemplates": {
+    "rat": {
+      "type": "enemy",
+      "personality": {
+        "traits": ["aggressive", "cowardly", "hungry"],
+        "mood": "neutral"
+      },
+      "stats": {
+        "health": 20,
+        "attack": 3,
+        "defense": 2,
+        "level": 1
+      },
+      "loot": {
+        "gold": { "min": 1, "max": 3 },
+        "items": ["rat_pelt", "rat_tail"],
+        "dropRate": 0.3
+      },
+      "behavior": "aggressive",
+      "experience": 10
+    },
+
+    "goblin": {
+      "type": "enemy",
+      "personality": {
+        "traits": ["cunning", "greedy", "cowardly"],
+        "mood": "suspicious"
+      },
+      "stats": {
+        "health": 40,
+        "attack": 8,
+        "defense": 5,
+        "level": 3
+      },
+      "loot": {
+        "gold": { "min": 5, "max": 15 },
+        "items": ["rusty_dagger", "goblin_ear", "stolen_goods"],
+        "dropRate": 0.4
+      },
+      "behavior": "aggressive",
+      "experience": 35
+    },
+
+    "wolf": {
+      "type": "enemy",
+      "personality": {
+        "traits": ["fierce", "pack_hunter", "territorial"],
+        "mood": "neutral"
+      },
+      "stats": {
+        "health": 60,
+        "attack": 12,
+        "defense": 8,
+        "level": 4
+      },
+      "loot": {
+        "gold": { "min": 0, "max": 2 },
+        "items": ["wolf_pelt", "wolf_fang", "wolf_meat"],
+        "dropRate": 0.5
+      },
+      "behavior": "aggressive",
+      "experience": 50
+    },
+
+    "bandit": {
+      "type": "enemy",
+      "personality": {
+        "traits": ["ruthless", "greedy", "organized"],
+        "mood": "suspicious"
+      },
+      "stats": {
+        "health": 80,
+        "attack": 15,
+        "defense": 12,
+        "level": 6
+      },
+      "loot": {
+        "gold": { "min": 15, "max": 40 },
+        "items": ["iron_sword", "leather_armor", "health_potion"],
+        "dropRate": 0.6
+      },
+      "behavior": "aggressive",
+      "experience": 80
+    },
+
+    "skeleton": {
+      "type": "enemy",
+      "personality": {
+        "traits": ["undead", "relentless", "mindless"],
+        "mood": "neutral"
+      },
+      "stats": {
+        "health": 50,
+        "attack": 10,
+        "defense": 6,
+        "level": 5
+      },
+      "loot": {
+        "gold": { "min": 3, "max": 8 },
+        "items": ["bone_fragment", "rusty_weapon", "tattered_cloth"],
+        "dropRate": 0.35
+      },
+      "behavior": "aggressive",
+      "experience": 60
+    }
+  }
+}

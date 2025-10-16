@@ -1,0 +1,617 @@
+{
+  "version": "1.0.0",
+  "description": "Quest definitions with objectives, rewards, and prerequisites",
+
+  "quests": [
+    {
+      "id": "quest_rat_problem",
+      "name": "Rat Problem",
+      "description": "Garrick at the Hammer & Anvil tavern has been hearing scratching sounds in his cellar. He suspects rats and needs someone to clear them out.",
+      "type": "tutorial",
+      "difficulty": "beginner",
+      "questGiverId": "npc_garrick",
+      "locationId": "ironforge_tavern",
+      "requiredLevel": 1,
+      "objectives": [
+        {
+          "type": "kill",
+          "target": "rat",
+          "count": 8,
+          "description": "Defeat 8 rats in the tavern cellar",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 25,
+        "experience": 50,
+        "items": ["health_potion"],
+        "reputation": 5
+      },
+      "dialogue": {
+        "start": "I've been hearing strange noises in the cellar. Sounds like rats, and big ones at that! I'm too busy running the tavern to deal with it. Think you could clear them out? I'll make it worth your while.",
+        "progress": "Still hearing those rats down there. Be careful - they might be bigger than normal rats.",
+        "complete": "You did it! The cellar is quiet now. Here's your reward, and you've earned a free meal anytime you're in the tavern!"
+      },
+      "hints": [
+        "The cellar entrance is behind the bar",
+        "Rats are weak individually but dangerous in groups",
+        "Try to fight them one or two at a time"
+      ],
+      "teachingPoints": [
+        "basic_combat",
+        "quest_system",
+        "npc_interaction"
+      ]
+    },
+    {
+      "id": "quest_training_exercise",
+      "name": "Training Exercise",
+      "description": "Master Brynn has left equipment in the training caves and wants it retrieved. The caves are now infested, making this a real test of skill.",
+      "type": "tutorial",
+      "difficulty": "beginner",
+      "questGiverId": "npc_trainer_brynn",
+      "locationId": "ironforge_guild_hall",
+      "requiredLevel": 2,
+      "objectives": [
+        {
+          "type": "retrieve",
+          "target": "training_equipment",
+          "count": 1,
+          "description": "Retrieve the training equipment from the caves",
+          "optional": false
+        },
+        {
+          "type": "kill",
+          "target": "rat",
+          "count": 5,
+          "description": "Clear out the rats blocking your path",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 40,
+        "experience": 100,
+        "items": ["iron_sword"],
+        "reputation": 10
+      },
+      "dialogue": {
+        "start": "I left some training equipment in the caves south of the city. The place is overrun with rats now. If you can retrieve the equipment and clear out some of those pests, I'll give you a proper weapon. Consider it part of your training.",
+        "progress": "The caves are southeast of the city gates. Don't get cocky - even rats can be deadly if you're careless.",
+        "complete": "Good work. You handled yourself well. Here's that weapon I promised. Keep training, and you'll make a fine adventurer."
+      },
+      "prerequisites": [],
+      "teachingPoints": [
+        "dungeon_exploration",
+        "item_retrieval",
+        "combat_tactics"
+      ]
+    },
+    {
+      "id": "quest_ore_collection",
+      "name": "Quality Materials",
+      "description": "Thorin Ironhammer needs iron ore for a special commission. He's willing to pay well for quality materials.",
+      "type": "fetch",
+      "difficulty": "easy",
+      "questGiverId": "npc_thorin",
+      "locationId": "ironforge_blacksmith",
+      "requiredLevel": 3,
+      "objectives": [
+        {
+          "type": "collect",
+          "target": "iron_ore",
+          "count": 5,
+          "description": "Collect 5 iron ore",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 75,
+        "experience": 150,
+        "items": ["steel_shield"],
+        "reputation": 15
+      },
+      "dialogue": {
+        "start": "I've got a commission for a noble, and I need quality iron ore. The mines north of the city have good ore. Bring me 5 pieces, and I'll forge you something special - a steel shield with your name on it.",
+        "progress": "Still need that ore. Don't bring me junk - I can tell quality from garbage.",
+        "complete": "Good ore. This'll do nicely. Here's your shield. I put extra effort into it - it'll serve you well."
+      },
+      "hints": [
+        "Iron ore can be found in the northern mines",
+        "You can also purchase ore from merchants if you prefer"
+      ],
+      "teachingPoints": [
+        "resource_gathering",
+        "trading",
+        "crafting_system"
+      ]
+    },
+    {
+      "id": "quest_undead_threat",
+      "name": "The Undead Threat",
+      "description": "Priestess Lyra is deeply concerned about reports of undead rising in the old cemetery outside Ironforge. This evil must be stopped.",
+      "type": "combat",
+      "difficulty": "medium",
+      "questGiverId": "npc_priestess_lyra",
+      "locationId": "ironforge_temple",
+      "requiredLevel": 5,
+      "objectives": [
+        {
+          "type": "kill",
+          "target": "skeleton",
+          "count": 10,
+          "description": "Destroy 10 skeletons in the old cemetery",
+          "optional": false
+        },
+        {
+          "type": "investigate",
+          "target": "cemetery_tomb",
+          "count": 1,
+          "description": "Investigate the source of the undead",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 150,
+        "experience": 400,
+        "items": ["holy_water", "blessing_scroll"],
+        "reputation": 25
+      },
+      "dialogue": {
+        "start": "Something dark has awakened in the old cemetery. The dead are rising, and this is an abomination against the natural order. Please, you must stop this evil. I'll provide holy water to aid you against the undead.",
+        "progress": "Be careful. Undead feel no pain and know no fear. Holy water and blessed weapons are most effective against them.",
+        "complete": "You've done a great service. The dead can rest peacefully again. May the light always guide you, brave one."
+      },
+      "prerequisites": [],
+      "hints": [
+        "The old cemetery is west of the city",
+        "Holy water is particularly effective against undead",
+        "Skeletons are vulnerable to blunt weapons"
+      ],
+      "teachingPoints": [
+        "enemy_weaknesses",
+        "special_items",
+        "dungeon_exploration"
+      ]
+    },
+    {
+      "id": "quest_goblin_problem",
+      "name": "Goblin Raiders",
+      "description": "Goblins have been attacking merchant caravans on the forest road. Guild Master Aldric needs someone to clear out their camp.",
+      "type": "combat",
+      "difficulty": "medium",
+      "questGiverId": "npc_guild_master_aldric",
+      "locationId": "ironforge_guild_hall",
+      "requiredLevel": 6,
+      "objectives": [
+        {
+          "type": "kill",
+          "target": "goblin",
+          "count": 15,
+          "description": "Defeat 15 goblins",
+          "optional": false
+        },
+        {
+          "type": "collect",
+          "target": "goblin_ear",
+          "count": 10,
+          "description": "Collect 10 goblin ears as proof",
+          "optional": false
+        },
+        {
+          "type": "destroy",
+          "target": "goblin_camp",
+          "count": 1,
+          "description": "Destroy the goblin camp",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 200,
+        "experience": 500,
+        "items": ["chainmail", "health_potion", "health_potion"],
+        "reputation": 30
+      },
+      "dialogue": {
+        "start": "Goblins have set up a camp in the eastern forest and are raiding caravans. Merchants are losing goods and guards are getting injured. Clear out that camp and bring me proof. The guild will pay well.",
+        "progress": "The goblin camp is in the eastern forest, about two miles from the main road. They're organized and dangerous. Don't underestimate them.",
+        "complete": "Excellent work! The merchants can travel safely again. Your reputation as a capable adventurer is growing."
+      },
+      "prerequisites": [],
+      "hints": [
+        "Goblins fight in groups - use tactics",
+        "Their camp is fortified, so expect resistance",
+        "Bring healing potions"
+      ],
+      "teachingPoints": [
+        "tactical_combat",
+        "camp_clearing",
+        "proof_collection"
+      ]
+    },
+    {
+      "id": "quest_bandit_camp",
+      "name": "Bandit Camp",
+      "description": "A group of bandits has been terrorizing travelers on the road to Frostpeak. They need to be dealt with.",
+      "type": "combat",
+      "difficulty": "hard",
+      "questGiverId": "npc_guild_master_aldric",
+      "locationId": "ironforge_guild_hall",
+      "requiredLevel": 8,
+      "partySize": 2,
+      "objectives": [
+        {
+          "type": "kill",
+          "target": "bandit",
+          "count": 20,
+          "description": "Defeat 20 bandits",
+          "optional": false
+        },
+        {
+          "type": "kill",
+          "target": "bandit_leader",
+          "count": 1,
+          "description": "Defeat the bandit leader",
+          "optional": false
+        },
+        {
+          "type": "retrieve",
+          "target": "stolen_goods",
+          "count": 1,
+          "description": "Recover the stolen merchant goods",
+          "optional": true
+        }
+      ],
+      "rewards": {
+        "gold": 400,
+        "experience": 800,
+        "items": ["steel_armor", "greater_health_potion", "greater_health_potion"],
+        "reputation": 50
+      },
+      "bonusRewards": {
+        "gold": 200,
+        "items": ["ring_of_protection"],
+        "condition": "complete_optional_objectives"
+      },
+      "dialogue": {
+        "start": "We've located the main bandit camp on the mountain road. They're well-armed and organized - this isn't a job for beginners. I recommend bringing a partner. Clear them out and there's a hefty reward waiting.",
+        "progress": "Be smart about this. Bandits are experienced fighters. Scout the camp first, plan your approach, and don't bite off more than you can chew.",
+        "complete": "Outstanding! Those bandits won't trouble anyone again. The merchants' guild is very grateful. Here's your reward - you've earned every copper."
+      },
+      "prerequisites": ["quest_goblin_problem"],
+      "recommendedPartySize": 2,
+      "hints": [
+        "This quest is dangerous - bring a party member",
+        "Bandits use tactics and cover",
+        "The leader is much stronger than regular bandits"
+      ],
+      "teachingPoints": [
+        "party_combat",
+        "boss_fights",
+        "optional_objectives"
+      ]
+    },
+    {
+      "id": "quest_crystal_caves",
+      "name": "The Crystal Caves",
+      "description": "Hermit Torin senses a disturbance in the Crystal Caves. Something ancient has awakened, and it threatens the mountain's balance.",
+      "type": "exploration",
+      "difficulty": "hard",
+      "questGiverId": "npc_hermit_torin",
+      "locationId": "frostpeak_shrine",
+      "requiredLevel": 10,
+      "objectives": [
+        {
+          "type": "explore",
+          "target": "crystal_caves",
+          "count": 1,
+          "description": "Explore the Crystal Caves",
+          "optional": false
+        },
+        {
+          "type": "collect",
+          "target": "crystal_shard",
+          "count": 5,
+          "description": "Collect 5 crystal shards",
+          "optional": false
+        },
+        {
+          "type": "kill",
+          "target": "ice_elemental",
+          "count": 1,
+          "description": "Defeat the awakened ice elemental",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 500,
+        "experience": 1200,
+        "items": ["enchanted_dagger", "healing_amulet"],
+        "reputation": 60
+      },
+      "dialogue": {
+        "start": "The mountain speaks to me, and it is troubled. Something has awakened in the Crystal Caves - an ancient elemental of ice and magic. It must be returned to slumber, or the entire mountain will suffer. This is a task for a true hero.",
+        "progress": "The caves are treacherous. The cold is unnatural, and ice elementals do not die easily. Bring warm clothing and strong weapons. May the mountain protect you.",
+        "complete": "You have done it. The mountain is at peace again. You have my gratitude and the mountain's blessing. Few could accomplish what you have done."
+      },
+      "prerequisites": ["quest_training_exercise"],
+      "hints": [
+        "Bring cold resistance gear",
+        "Crystal shards are valuable - collect extras if possible",
+        "Ice elementals are weak to fire"
+      ],
+      "teachingPoints": [
+        "elemental_combat",
+        "environmental_hazards",
+        "boss_mechanics"
+      ]
+    },
+    {
+      "id": "quest_historical_research",
+      "name": "Historical Research",
+      "description": "Scholar Aldwyn is trying to complete a historical text about the ancient civilizations. He needs information from various ruins.",
+      "type": "exploration",
+      "difficulty": "medium",
+      "questGiverId": "npc_scholar_aldwyn",
+      "locationId": "ironforge_library",
+      "requiredLevel": 7,
+      "objectives": [
+        {
+          "type": "explore",
+          "target": "ancient_ruins_1",
+          "count": 1,
+          "description": "Explore the Eastern Ruins",
+          "optional": false
+        },
+        {
+          "type": "collect",
+          "target": "ancient_scroll",
+          "count": 3,
+          "description": "Collect 3 ancient scrolls",
+          "optional": false
+        },
+        {
+          "type": "photograph",
+          "target": "ancient_inscriptions",
+          "count": 5,
+          "description": "Document 5 ancient inscriptions",
+          "optional": true
+        }
+      ],
+      "rewards": {
+        "gold": 250,
+        "experience": 600,
+        "items": ["blessing_scroll", "map_fragment"],
+        "reputation": 35
+      },
+      "bonusRewards": {
+        "gold": 150,
+        "experience": 300,
+        "condition": "complete_optional_objectives"
+      },
+      "dialogue": {
+        "start": "I'm writing a comprehensive history of the ancient civilizations that preceded our kingdoms. The ruins east of here contain texts I desperately need. Would you be willing to explore them and bring back any scrolls or inscriptions you find?",
+        "progress": "Ancient ruins often contain traps and guardians. Be careful, but please, any information you can recover will be invaluable to my research.",
+        "complete": "Marvelous! These scrolls contain information thought lost forever! You've made a significant contribution to historical knowledge. Thank you, truly."
+      },
+      "prerequisites": [],
+      "hints": [
+        "Bring rope and torches for exploration",
+        "Ancient ruins often have puzzles",
+        "Document inscriptions with sketches or rubbings"
+      ],
+      "teachingPoints": [
+        "exploration",
+        "puzzle_solving",
+        "documentation"
+      ]
+    },
+    {
+      "id": "quest_artifact_recovery",
+      "name": "Artifact Recovery",
+      "description": "Lady Selene has information about a powerful artifact hidden in the desert ruins. She needs a capable adventurer to retrieve it.",
+      "type": "exploration",
+      "difficulty": "expert",
+      "questGiverId": "npc_lady_selene",
+      "locationId": "aurelia_exotic_goods",
+      "requiredLevel": 12,
+      "objectives": [
+        {
+          "type": "explore",
+          "target": "desert_ruins",
+          "count": 1,
+          "description": "Find and explore the hidden desert ruins",
+          "optional": false
+        },
+        {
+          "type": "solve",
+          "target": "ancient_puzzle",
+          "count": 3,
+          "description": "Solve 3 ancient puzzles",
+          "optional": false
+        },
+        {
+          "type": "retrieve",
+          "target": "ancient_artifact",
+          "count": 1,
+          "description": "Retrieve the Sunstone Amulet",
+          "optional": false
+        }
+      ],
+      "rewards": {
+        "gold": 800,
+        "experience": 1500,
+        "items": ["legendary_artifact", "ancient_scroll", "ancient_scroll"],
+        "reputation": 80
+      },
+      "dialogue": {
+        "start": "I've located a ruin that holds an artifact of great power - the Sunstone Amulet. The ruin is protected by ancient magic and deadly traps. I need someone with skill, intelligence, and courage to retrieve it. Are you that person?",
+        "progress": "The ruins are deep in the desert, south of Sandstone. The ancients were clever - expect puzzles as well as guardians. Study the inscriptions carefully.",
+        "complete": "You've actually done it! The Sunstone Amulet! This is... remarkable. You've proven yourself as one of the most capable adventurers in the realm. Your reward, as promised."
+      },
+      "prerequisites": ["quest_historical_research"],
+      "hints": [
+        "Bring desert survival gear",
+        "Ancient puzzles require observation and logic",
+        "The artifact is heavily guarded"
+      ],
+      "teachingPoints": [
+        "advanced_puzzles",
+        "trap_detection",
+        "artifact_handling"
+      ]
+    },
+    {
+      "id": "quest_ruin_expedition",
+      "name": "Ruin Expedition",
+      "description": "Guild Master Rashid is organizing an expedition to a newly discovered ruin. He needs capable adventurers to join.",
+      "type": "party",
+      "difficulty": "hard",
+      "questGiverId": "npc_guild_master_rashid",
+      "locationId": "aurelia_guild_hall",
+      "requiredLevel": 10,
+      "partySize": 3,
+      "objectives": [
+        {
+          "type": "explore",
+          "target": "forgotten_temple",
+          "count": 1,
+          "description": "Explore the Forgotten Temple",
+          "optional": false
+        },
+        {
+          "type": "kill",
+          "target": "temple_guardian",
+          "count": 5,
+          "description": "Defeat 5 temple guardians",
+          "optional": false
+        },
+        {
+          "type": "retrieve",
+          "target": "temple_treasures",
+          "count": 1,
+          "description": "Recover the temple treasures",
+          "optional": false
+        },
+        {
+          "type": "rescue",
+          "target": "trapped_scholar",
+          "count": 1,
+          "description": "Rescue the trapped scholar",
+          "optional": true
+        }
+      ],
+      "rewards": {
+        "gold": 600,
+        "experience": 1000,
+        "items": ["rare_weapon", "rare_armor"],
+        "reputation": 70
+      },
+      "bonusRewards": {
+        "gold": 300,
+        "experience": 500,
+        "items": ["scholar_gift"],
+        "condition": "rescue_scholar"
+      },
+      "dialogue": {
+        "start": "We've discovered a temple buried in the sands. Initial scouts report treasures and danger in equal measure. I need a party of three capable adventurers for a full expedition. Interested?",
+        "progress": "The temple guardians are ancient constructs - they don't tire and they don't stop. Work together with your party. One of our scholars went in ahead and hasn't returned. If you find him, bring him back safely.",
+        "complete": "A successful expedition! The treasures you've recovered will be studied and some sold. Here's your share of the profits. Well done!"
+      },
+      "prerequisites": ["quest_training_exercise"],
+      "recommendedPartySize": 3,
+      "hints": [
+        "This requires a full party - don't go alone",
+        "Temple guardians are strong against physical damage",
+        "Rescue the scholar for bonus rewards"
+      ],
+      "teachingPoints": [
+        "party_coordination",
+        "role_specialization",
+        "rescue_missions"
+      ]
+    },
+    {
+      "id": "quest_party_challenge",
+      "name": "The Dragon's Lair",
+      "description": "Rumors speak of a young dragon that has made its lair in the volcanic caves south of the confederacy. This is a challenge for the bravest heroes.",
+      "type": "party",
+      "difficulty": "expert",
+      "questGiverId": "npc_guild_master_rashid",
+      "locationId": "aurelia_guild_hall",
+      "requiredLevel": 15,
+      "partySize": 4,
+      "objectives": [
+        {
+          "type": "explore",
+          "target": "volcanic_caves",
+          "count": 1,
+          "description": "Navigate the volcanic caves",
+          "optional": false
+        },
+        {
+          "type": "kill",
+          "target": "young_dragon",
+          "count": 1,
+          "description": "Defeat the young dragon",
+          "optional": false
+        },
+        {
+          "type": "collect",
+          "target": "dragon_scale",
+          "count": 5,
+          "description": "Collect dragon scales",
+          "optional": true
+        }
+      ],
+      "rewards": {
+        "gold": 2000,
+        "experience": 3000,
+        "items": ["legendary_weapon", "legendary_armor", "dragon_amulet"],
+        "reputation": 150
+      },
+      "bonusRewards": {
+        "gold": 1000,
+        "items": ["dragon_scale_shield"],
+        "condition": "collect_all_scales"
+      },
+      "dialogue": {
+        "start": "There are legends... and then there are truths too incredible to believe. A young dragon has been spotted in the volcanic caves. This is a quest for legends, for heroes who will be remembered. Gather your strongest allies. You'll need them.",
+        "progress": "Dragons are intelligent, powerful, and deadly. Even a young one is more dangerous than anything you've faced. Coordinate with your party, prepare thoroughly, and fight with everything you have. Good luck, heroes.",
+        "complete": "You've slain a dragon. A DRAGON! Your names will be sung in taverns across the realm. You are true heroes, and you've earned rewards worthy of your deed. Congratulations!"
+      },
+      "prerequisites": ["quest_ruin_expedition", "quest_crystal_caves"],
+      "recommendedPartySize": 4,
+      "hints": [
+        "This is the ultimate challenge - prepare thoroughly",
+        "Dragons use fire, physical attacks, and magic",
+        "Bring fire resistance, strong weapons, and lots of healing",
+        "Party coordination is essential for survival"
+      ],
+      "teachingPoints": [
+        "raid_mechanics",
+        "ultimate_boss_fight",
+        "advanced_party_coordination"
+      ]
+    }
+  ],
+
+  "questCategories": {
+    "tutorial": ["quest_rat_problem", "quest_training_exercise"],
+    "fetch": ["quest_ore_collection"],
+    "combat": ["quest_undead_threat", "quest_goblin_problem", "quest_bandit_camp"],
+    "exploration": ["quest_crystal_caves", "quest_historical_research", "quest_artifact_recovery"],
+    "party": ["quest_ruin_expedition", "quest_party_challenge"],
+    "beginner": ["quest_rat_problem", "quest_training_exercise"],
+    "intermediate": ["quest_ore_collection", "quest_undead_threat", "quest_goblin_problem", "quest_historical_research"],
+    "advanced": ["quest_bandit_camp", "quest_crystal_caves", "quest_ruin_expedition"],
+    "expert": ["quest_artifact_recovery", "quest_party_challenge"]
+  },
+
+  "questChains": {
+    "ironforge_hero": ["quest_rat_problem", "quest_training_exercise", "quest_goblin_problem", "quest_bandit_camp"],
+    "scholar_path": ["quest_historical_research", "quest_artifact_recovery"],
+    "mountain_master": ["quest_training_exercise", "quest_crystal_caves"],
+    "desert_explorer": ["quest_ruin_expedition", "quest_artifact_recovery"],
+    "legendary_hero": ["quest_crystal_caves", "quest_ruin_expedition", "quest_party_challenge"]
+  }
+}

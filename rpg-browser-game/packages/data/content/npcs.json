@@ -1,0 +1,1453 @@
+{
+  "version": "1.0.0",
+  "description": "NPC definitions with personalities, schedules, and dialogue",
+
+  "npcs": [
+    {
+      "id": "npc_garrick",
+      "name": "Garrick Stoneheart",
+      "type": "innkeeper",
+      "templateId": "innkeeper",
+      "locationId": "ironforge_tavern",
+      "personality": {
+        "traits": ["jovial", "welcoming", "storyteller", "observant"],
+        "mood": "cheerful"
+      },
+      "appearance": "A stout man with a thick beard, always wearing a stained apron. His face is red from standing near the kitchen fires, and his eyes twinkle with good humor.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the Hammer & Anvil! Best tavern in all of Ironforge!",
+          "Come in, come in! You look like you could use a hot meal and cold ale!",
+          "Ah, another traveler! You've picked the right place to rest your bones!"
+        ],
+        "topics": {
+          "rooms": [
+            "Rooms are 10 gold per night. Clean sheets, warm blankets, and breakfast included!",
+            "We've got a nice room available upstairs. You won't find better beds in the city.",
+            "Looking for lodging? I've got just the room for you. Quiet, comfortable, and the door locks securely."
+          ],
+          "food": [
+            "My wife makes the best iron stew in the kingdom - it's got chunks of beef, potatoes, and secret herbs!",
+            "The roasted boar is fresh today. Caught just this morning by hunters from the north woods.",
+            "Don't leave without trying our famous mountain bread. Baked fresh every morning!"
+          ],
+          "rumors": [
+            "I heard from a merchant that strange lights have been seen in the old ruins east of the city.",
+            "The guards have been on edge lately. Something about increased goblin activity in the forests.",
+            "A group of adventurers came through last week, talking about finding an entrance to the Crystal Caves near Frostpeak.",
+            "Word is the guild is looking for capable folks to help with various problems around the realm."
+          ],
+          "city": [
+            "Ironforge is a good city, safe and prosperous. The guild master keeps adventurers busy, which keeps us all safe.",
+            "This tavern's been in my family for three generations. My grandfather built it with his own hands!",
+            "If you need anything in the city, I can point you in the right direction. I know everyone here."
+          ],
+          "quest_hint": [
+            "You know, I've been having trouble with rats in my cellar. Been too busy to deal with it myself...",
+            "If you're looking for work, the guild hall always has something posted on their board."
+          ]
+        },
+        "farewell": [
+          "Safe travels, friend! Come back and tell me about your adventures!",
+          "May your mug always be full and your blade always sharp!",
+          "Take care out there! The world's dangerous for the unprepared."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "open_inn", "location": "ironforge_tavern" },
+        { "time": "08:00", "action": "serve_breakfast", "location": "ironforge_tavern" },
+        { "time": "12:00", "action": "serve_lunch", "location": "ironforge_tavern" },
+        { "time": "18:00", "action": "serve_dinner", "location": "ironforge_tavern" },
+        { "time": "22:00", "action": "close_common_room", "location": "ironforge_tavern" },
+        { "time": "23:00", "action": "sleep", "location": "private_quarters" }
+      ],
+      "inventory": ["room_key", "tavern_menu"],
+      "questGiver": true,
+      "quests": ["quest_rat_problem"]
+    },
+    {
+      "id": "npc_elara",
+      "name": "Elara Swiftwind",
+      "type": "citizen",
+      "templateId": "citizen",
+      "locationId": "ironforge_tavern",
+      "personality": {
+        "traits": ["mysterious", "wise", "helpful", "secretive"],
+        "mood": "friendly"
+      },
+      "appearance": "An elven woman with long silver hair and piercing green eyes. She wears traveling clothes and always sits in the corner, observing the room.",
+      "dialogue": {
+        "greeting": [
+          "Greetings, traveler. You have the look of an adventurer about you.",
+          "Ah, a new face. How interesting...",
+          "Welcome. Care to join me for a moment?"
+        ],
+        "topics": {
+          "background": [
+            "I'm a scholar of sorts, studying the ancient ruins scattered across the realm.",
+            "I've traveled far and wide, seeking knowledge lost to time.",
+            "My people, the elves, have long memories. I know many old stories."
+          ],
+          "advice": [
+            "Always be prepared before venturing into unknown territories. Supplies can mean the difference between success and failure.",
+            "The guild hall is a good place to start for a new adventurer. They'll help you learn the ropes.",
+            "Don't underestimate even the smallest threats. Many overconfident adventurers have fallen to 'harmless' creatures."
+          ],
+          "lore": [
+            "These lands hold many secrets. The ruins you see are remnants of civilizations that fell long before humans arrived.",
+            "Magic flows through certain places in the world. Those sensitive to it can feel the power in ancient sites.",
+            "The Sunspire Confederacy to the south is built atop an ancient empire. Their ruins hold incredible treasures and terrible dangers."
+          ],
+          "quest_hint": [
+            "I've heard tales of a powerful artifact hidden in the Crystal Caves. If you're strong enough, it might be worth investigating.",
+            "The library here has information on many topics. Scholar Aldwyn is quite knowledgeable, if you can get him talking."
+          ]
+        },
+        "farewell": [
+          "May your path be true and your blade strike swift.",
+          "Be careful out there. Knowledge is power, but wisdom is knowing when to fight and when to flee.",
+          "Until we meet again, traveler."
+        ]
+      },
+      "schedule": [
+        { "time": "10:00", "action": "reading_at_library", "location": "ironforge_library" },
+        { "time": "14:00", "action": "walking_city", "location": "ironforge_streets" },
+        { "time": "18:00", "action": "dinner_at_tavern", "location": "ironforge_tavern" },
+        { "time": "22:00", "action": "sleep", "location": "ironforge_tavern_room" }
+      ],
+      "questGiver": true,
+      "quests": ["quest_ancient_artifact"]
+    },
+    {
+      "id": "npc_thorin",
+      "name": "Thorin Ironhammer",
+      "type": "merchant",
+      "templateId": "blacksmith",
+      "locationId": "ironforge_blacksmith",
+      "personality": {
+        "traits": ["skilled", "proud", "perfectionist", "gruff"],
+        "mood": "neutral"
+      },
+      "appearance": "A dwarf with massive shoulders and arms like tree trunks. His beard is braided and singed from the forge, and he wears a leather apron covered in burn marks.",
+      "dialogue": {
+        "greeting": [
+          "You need something forged or just browsing?",
+          "Quality work takes time. What do you need?",
+          "Every weapon I make is a work of art. What'll it be?"
+        ],
+        "topics": {
+          "craft": [
+            "I learned smithing from my father, who learned from his father. Three generations of Ironhammers have worked this forge.",
+            "Bring me quality materials and I'll forge you something that'll last a lifetime.",
+            "I don't do rush jobs. Good work requires patience and skill.",
+            "That sword on the wall? Took me a month to forge and another week to perfect the edge. That's real craftsmanship."
+          ],
+          "weapons": [
+            "An iron sword is a good starter weapon. Reliable and well-balanced.",
+            "If you want something stronger, come back when you have steel ingots. I'll forge you a blade that'll slice through armor.",
+            "Axes are popular with northern fighters. Good for both combat and utility."
+          ],
+          "armor": [
+            "Leather armor is light and won't slow you down much. Good for beginners.",
+            "Steel armor provides better protection, but you need strength to wear it effectively.",
+            "I can repair any armor you bring me. Costs less than buying new, and I do good work."
+          ],
+          "materials": [
+            "Iron ore comes from the mines north of the city. Most of what I use is local.",
+            "Steel requires iron and coal. The process is complex, but the result is worth it.",
+            "If you're venturing into the mountains, bring back any ore you find. I'll pay fair prices."
+          ],
+          "quest_hint": [
+            "I need quality materials for a special commission. If you can bring me 5 iron ore, I'll make it worth your while."
+          ]
+        },
+        "farewell": [
+          "May your weapon never fail you.",
+          "Come back when you need repairs. Or better gear.",
+          "Good luck out there. You'll need it."
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_shop", "location": "ironforge_blacksmith" },
+        { "time": "09:00", "action": "forging", "location": "forge" },
+        { "time": "12:00", "action": "lunch_break", "location": "shop" },
+        { "time": "13:00", "action": "forging", "location": "forge" },
+        { "time": "18:00", "action": "close_shop", "location": "ironforge_blacksmith" },
+        { "time": "19:00", "action": "sleep", "location": "home" }
+      ],
+      "inventory": ["iron_sword", "steel_shield", "leather_armor", "chainmail", "iron_ore"],
+      "merchantType": "blacksmith",
+      "questGiver": true,
+      "quests": ["quest_ore_collection"]
+    },
+    {
+      "id": "npc_mara",
+      "name": "Mara Quickfingers",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "ironforge_general_store",
+      "personality": {
+        "traits": ["efficient", "friendly", "organized", "fair"],
+        "mood": "cheerful"
+      },
+      "appearance": "A halfling woman with curly brown hair and a quick smile. She moves with surprising speed and can find any item in her shop in seconds.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to Northmarch Goods! If I don't have it, you probably don't need it!",
+          "Hello! Looking for supplies? You've come to the right place!",
+          "Good to see you! What can I help you find today?"
+        ],
+        "topics": {
+          "goods": [
+            "I stock all the essentials: potions, rope, torches, and more.",
+            "Just got a new shipment of health potions. Very popular with adventurers!",
+            "I buy and sell. If you have items you don't need, I'll give you a fair price.",
+            "Need a backpack? I've got several sizes. Can't adventure without proper storage!"
+          ],
+          "advice": [
+            "Never venture into a dungeon without healing potions. Trust me on this one.",
+            "Torches are cheap and essential. Don't go stumbling around in the dark!",
+            "A good rope has saved more adventurers than you'd think. Always keep one handy."
+          ],
+          "business": [
+            "I've run this shop for ten years. Started small, but now I supply half the adventurers in the city!",
+            "Fair prices and good service - that's my motto. Treat customers right and they'll come back.",
+            "My suppliers come from all over. That's how I keep such a good selection."
+          ],
+          "city": [
+            "Ironforge is my home. Born and raised right here in the city.",
+            "The guild hall brings a lot of business my way. Adventurers need supplies!",
+            "It's a good community. Everyone looks out for each other."
+          ]
+        },
+        "farewell": [
+          "Come back soon! And stay safe out there!",
+          "Good luck! Don't be a stranger!",
+          "May your adventures be profitable!"
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_shop", "location": "ironforge_general_store" },
+        { "time": "12:00", "action": "inventory_check", "location": "stockroom" },
+        { "time": "13:00", "action": "tending_shop", "location": "ironforge_general_store" },
+        { "time": "18:00", "action": "close_shop", "location": "ironforge_general_store" },
+        { "time": "19:00", "action": "dinner", "location": "home" }
+      ],
+      "inventory": ["health_potion", "mana_potion", "rope", "torch", "backpack", "lockpick_set"],
+      "merchantType": "general"
+    },
+    {
+      "id": "npc_priestess_lyra",
+      "name": "Priestess Lyra",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "ironforge_temple",
+      "personality": {
+        "traits": ["compassionate", "wise", "serene", "dedicated"],
+        "mood": "friendly"
+      },
+      "appearance": "A human woman in flowing white robes, with kind eyes and an aura of peace. Her movements are graceful, and she speaks in a gentle voice.",
+      "dialogue": {
+        "greeting": [
+          "Blessings upon you, child. Welcome to the Temple of the Dawn.",
+          "Peace be with you. How may I help you today?",
+          "The light welcomes all who enter with good intent."
+        ],
+        "topics": {
+          "healing": [
+            "The gods grant us the power to mend wounds and cure ailments. I offer healing to all who need it.",
+            "A simple healing costs 20 gold. For greater injuries, the price increases accordingly.",
+            "Healing magic flows through faith and compassion. It is a sacred gift."
+          ],
+          "blessing": [
+            "A blessing can aid you in your travels. It will grant you strength and protection for a time.",
+            "The blessing of the dawn provides clarity of mind and courage of heart.",
+            "I can offer several types of blessings, each suited to different needs."
+          ],
+          "faith": [
+            "The gods watch over us all. They reward good deeds and punish wickedness.",
+            "Faith is a shield against darkness. Keep your heart pure and your intentions noble.",
+            "Prayer brings comfort and guidance. The gods hear those who truly seek their wisdom."
+          ],
+          "undead": [
+            "There have been reports of undead near the old cemetery. This troubles me greatly.",
+            "Undead are an abomination, creatures denied their natural rest. They must be put down with blessed weapons or holy magic.",
+            "If you encounter undead, holy water can weaken them. I can provide some for those who venture against such evil."
+          ],
+          "quest_hint": [
+            "I am deeply concerned about reports of undead rising in the old cemetery outside the city. If you are brave enough, this evil must be stopped.",
+            "There is darkness growing in places it shouldn't be. Those with courage should investigate."
+          ]
+        },
+        "farewell": [
+          "May the light guide your path.",
+          "Go with the gods' blessing, child.",
+          "Be safe, and remember the light is always with you."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "morning_prayers", "location": "ironforge_temple" },
+        { "time": "08:00", "action": "healing_services", "location": "ironforge_temple" },
+        { "time": "12:00", "action": "meditation", "location": "temple_garden" },
+        { "time": "14:00", "action": "healing_services", "location": "ironforge_temple" },
+        { "time": "18:00", "action": "evening_prayers", "location": "ironforge_temple" },
+        { "time": "20:00", "action": "rest", "location": "temple_quarters" }
+      ],
+      "inventory": ["holy_water", "blessing_scroll", "prayer_book"],
+      "services": ["healing", "blessing", "resurrection"],
+      "questGiver": true,
+      "quests": ["quest_undead_threat"]
+    },
+    {
+      "id": "npc_guild_master_aldric",
+      "name": "Guild Master Aldric",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "ironforge_guild_hall",
+      "personality": {
+        "traits": ["experienced", "fair", "strategic", "mentoring"],
+        "mood": "neutral"
+      },
+      "appearance": "A weathered human man in his fifties, with scars from countless battles. He wears practical clothes and keeps his weapons close. His eyes assess everyone who enters.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the guild. Here to take on a quest or register as an adventurer?",
+          "Another aspiring adventurer. Good - we always need capable people.",
+          "The notice board has our current postings. Take a look and see if anything interests you."
+        ],
+        "topics": {
+          "guild": [
+            "The Adventurer's Guild connects those who need help with those capable of providing it. We ensure fair pay and legitimate contracts.",
+            "I've been with the guild for thirty years. Started as a young adventurer and worked my way up to guild master.",
+            "We operate in cities across the realm. If you complete quests here, your reputation will follow you to other branches."
+          ],
+          "quests": [
+            "Check the notice board for available quests. They range from simple tasks to dangerous expeditions.",
+            "Quests are rated by difficulty. Don't take on something you're not ready for - pride has killed more adventurers than monsters.",
+            "Complete quests, build your reputation, and more opportunities will open up to you.",
+            "Some quests require parties. The guild hall is a good place to find trustworthy companions."
+          ],
+          "advice": [
+            "Preparation is key. Know your enemy, bring the right equipment, and never go alone into serious danger.",
+            "Your reputation matters. Complete quests successfully and honestly, and you'll be trusted with better opportunities.",
+            "Don't be afraid to ask for help. Even the best adventurers started as beginners.",
+            "The guild provides training for those willing to learn. Master Brynn over there can teach you various skills."
+          ],
+          "danger": [
+            "Goblin activity has increased in the forests lately. Merchants are complaining about attacks on their caravans.",
+            "Strange things have been happening in the old ruins. If you're experienced enough, there's good money in investigating.",
+            "Bandits have set up camps along some of the trade routes. The merchants' guild is offering rewards for clearing them out."
+          ]
+        },
+        "farewell": [
+          "Good luck out there. Come back alive and with a good story to tell.",
+          "May fortune favor you, adventurer.",
+          "Stay sharp. The world is dangerous for the careless."
+        ]
+      },
+      "schedule": [
+        { "time": "07:00", "action": "arrive_at_guild", "location": "ironforge_guild_hall" },
+        { "time": "08:00", "action": "managing_guild", "location": "guild_office" },
+        { "time": "12:00", "action": "lunch_at_tavern", "location": "ironforge_tavern" },
+        { "time": "13:00", "action": "managing_guild", "location": "ironforge_guild_hall" },
+        { "time": "20:00", "action": "reviewing_reports", "location": "guild_office" },
+        { "time": "22:00", "action": "close_guild", "location": "ironforge_guild_hall" }
+      ],
+      "questGiver": true,
+      "quests": ["quest_goblin_problem", "quest_bandit_camp"]
+    },
+    {
+      "id": "npc_trainer_brynn",
+      "name": "Master Brynn",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "ironforge_guild_hall",
+      "personality": {
+        "traits": ["tough", "patient", "skilled", "demanding"],
+        "mood": "neutral"
+      },
+      "appearance": "A muscular woman with short-cropped hair and numerous scars. She wears training clothes and carries a practice sword. Her stance suggests she's always ready for action.",
+      "dialogue": {
+        "greeting": [
+          "Ready to learn? Training isn't easy, but it's necessary.",
+          "You want to survive out there? You need to train properly.",
+          "Another student. Good. Let's see what you're made of."
+        ],
+        "topics": {
+          "training": [
+            "I teach combat techniques, survival skills, and tactical thinking. All essential for adventurers.",
+            "Training costs gold, but it's an investment in your life. Dead adventurers don't earn anything.",
+            "I've trained hundreds of adventurers. Most are still alive, which says something about the quality of my instruction.",
+            "Come back as you gain experience. I can teach advanced techniques to those who prove themselves."
+          ],
+          "combat": [
+            "Proper stance, controlled breathing, awareness of surroundings - these basics will keep you alive.",
+            "Every weapon has strengths and weaknesses. Learn them or die ignorant.",
+            "Fighting monsters is different from fighting people. They're unpredictable and often have natural weapons you can't match in raw power.",
+            "Speed, positioning, and knowing when to strike - these matter more than raw strength."
+          ],
+          "advice": [
+            "Never fight when you can avoid it, but be ready to fight when you must.",
+            "Your equipment matters, but skill matters more. A skilled fighter with basic gear beats a fool with legendary weapons.",
+            "Learn from every fight. Survival teaches lessons that no instructor can."
+          ],
+          "quest_hint": [
+            "Want a real test? I need someone to go into the training caves and retrieve something I left there. It's overrun with rats now, but that'll be good practice for you."
+          ]
+        },
+        "farewell": [
+          "Don't get yourself killed. It reflects poorly on my teaching.",
+          "Remember what you've learned. It could save your life.",
+          "Train hard, fight smart."
+        ]
+      },
+      "schedule": [
+        { "time": "07:00", "action": "morning_training", "location": "training_area" },
+        { "time": "12:00", "action": "lunch_break", "location": "guild_hall" },
+        { "time": "13:00", "action": "teaching_students", "location": "training_area" },
+        { "time": "18:00", "action": "personal_training", "location": "training_area" },
+        { "time": "20:00", "action": "rest", "location": "guild_quarters" }
+      ],
+      "services": ["training", "skill_teaching"],
+      "questGiver": true,
+      "quests": ["quest_training_exercise"]
+    },
+    {
+      "id": "npc_captain_roderick",
+      "name": "Captain Roderick",
+      "type": "guard",
+      "templateId": "guard",
+      "locationId": "ironforge_barracks",
+      "personality": {
+        "traits": ["dutiful", "honorable", "strict", "protective"],
+        "mood": "neutral"
+      },
+      "appearance": "A tall man in polished guard armor, with a captain's insignia. His posture is military-straight, and his voice carries authority.",
+      "dialogue": {
+        "greeting": [
+          "Citizen. What brings you to the barracks?",
+          "State your business.",
+          "The guard is always watching. This city is safe because of our vigilance."
+        ],
+        "topics": {
+          "duty": [
+            "The guard's duty is to protect the citizens and maintain order. We take this responsibility seriously.",
+            "I've served the guard for twenty years. This city is my home, and I'll defend it with my life if necessary.",
+            "My guards patrol day and night. Crime doesn't pay in Ironforge."
+          ],
+          "crime": [
+            "Crime is rare here, but it happens. We deal with it swiftly and fairly.",
+            "There's a bounty board if you're interested in helping with security matters. We pay well for results.",
+            "Some criminals flee to the wilderness. If you encounter wanted individuals, bring them in or eliminate them if necessary."
+          ],
+          "threats": [
+            "Goblins have been more active lately. We've increased patrols, but we can't be everywhere.",
+            "Bandits prey on travelers outside the city walls. Within the walls, you're safe. Beyond them, stay alert.",
+            "The forests can be dangerous. Wild animals and worse things lurk out there."
+          ],
+          "city": [
+            "Ironforge is a good city with good people. We keep it that way.",
+            "The guard works with the guild to handle threats. Adventurers tackle what's beyond our jurisdiction.",
+            "If you see anything suspicious, report it immediately."
+          ]
+        },
+        "farewell": [
+          "Stay out of trouble.",
+          "Dismissed.",
+          "Keep your nose clean, citizen."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "morning_briefing", "location": "barracks" },
+        { "time": "08:00", "action": "patrol_inspection", "location": "city_streets" },
+        { "time": "12:00", "action": "office_work", "location": "barracks" },
+        { "time": "18:00", "action": "evening_briefing", "location": "barracks" },
+        { "time": "20:00", "action": "night_watch_planning", "location": "barracks" }
+      ],
+      "stats": {
+        "health": 150,
+        "attack": 20,
+        "defense": 22,
+        "level": 8
+      }
+    },
+    {
+      "id": "npc_guard_finn",
+      "name": "Guard Finn",
+      "type": "guard",
+      "templateId": "guard",
+      "locationId": "ironforge_barracks",
+      "personality": {
+        "traits": ["friendly", "helpful", "young", "eager"],
+        "mood": "friendly"
+      },
+      "appearance": "A young guard with an earnest face and slightly oversized armor. He's enthusiastic about his duties and eager to help.",
+      "dialogue": {
+        "greeting": [
+          "Hello! Can I help you with something?",
+          "Good day! Everything alright?",
+          "Welcome! I'm Guard Finn. Let me know if you need anything!"
+        ],
+        "topics": {
+          "duty": [
+            "I'm still new to the guard, but I'm learning a lot! Captain Roderick is a great teacher.",
+            "It's an honor to serve and protect the city. I want to make it safer for everyone.",
+            "Sometimes patrol can be boring, but that means the city is safe, right?"
+          ],
+          "city": [
+            "Ironforge is amazing! I grew up in a small village, so the city still impresses me.",
+            "If you need directions anywhere, I can help! I know the city pretty well now.",
+            "The people here are friendly. It makes the job easier when everyone cooperates."
+          ],
+          "advice": [
+            "If you're new to adventuring, be careful out there. It's more dangerous than it looks.",
+            "The guild hall is a great place to start if you want to become an adventurer.",
+            "Always carry healing potions. My older brother is an adventurer, and he says they've saved his life more than once."
+          ]
+        },
+        "farewell": [
+          "Stay safe out there!",
+          "Have a great day!",
+          "Come back anytime!"
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "morning_patrol", "location": "market_square" },
+        { "time": "12:00", "action": "lunch_break", "location": "barracks" },
+        { "time": "13:00", "action": "gate_duty", "location": "north_gate" },
+        { "time": "18:00", "action": "evening_patrol", "location": "city_streets" },
+        { "time": "20:00", "action": "off_duty", "location": "barracks" }
+      ],
+      "stats": {
+        "health": 100,
+        "attack": 12,
+        "defense": 14,
+        "level": 3
+      }
+    },
+    {
+      "id": "npc_scholar_aldwyn",
+      "name": "Scholar Aldwyn",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "ironforge_library",
+      "personality": {
+        "traits": ["knowledgeable", "absent-minded", "passionate", "helpful"],
+        "mood": "friendly"
+      },
+      "appearance": "An elderly man with wild white hair and spectacles perched on his nose. His robes are ink-stained, and he often mutters to himself while searching for books.",
+      "dialogue": {
+        "greeting": [
+          "Ah, a visitor! Welcome to the repository of knowledge!",
+          "Shh! Quiet please... oh, you're not being loud. Sorry, force of habit. How can I help you?",
+          "Books, books, marvelous books! Are you seeking knowledge, young one?"
+        ],
+        "topics": {
+          "library": [
+            "This library has been collecting books for over two hundred years. We have texts on nearly every subject!",
+            "I've spent my entire adult life here. The books are like old friends to me.",
+            "Please be careful with the books. Some are quite fragile and irreplaceable.",
+            "If you're looking for specific information, I can point you to the right section."
+          ],
+          "knowledge": [
+            "Knowledge is humanity's greatest treasure. Everything we know, we learned from those who came before.",
+            "I can research almost any topic if you give me time. Historical events, monster weaknesses, ancient civilizations...",
+            "The more you learn, the better equipped you are to face the world's challenges."
+          ],
+          "monsters": [
+            "We have extensive bestiaries. Knowing your enemy is half the battle.",
+            "Many monsters have specific weaknesses. A little research can make a fight much easier.",
+            "Some creatures are more intelligent than people realize. Not everything that looks monstrous is evil."
+          ],
+          "history": [
+            "This land has a rich history. Kingdoms have risen and fallen, leaving ruins and legends behind.",
+            "The Sunspire Confederacy was built on the ruins of an ancient empire. They had technology and magic we've lost.",
+            "Old texts mention powerful artifacts hidden in various locations. Some have been found, but many remain lost."
+          ],
+          "quest_hint": [
+            "I'm trying to complete a historical text, but I'm missing information about the Crystal Caves. If you happen to explore them, could you bring back any inscriptions or artifacts you find?"
+          ]
+        },
+        "farewell": [
+          "Happy reading! Or adventuring! Or both!",
+          "May knowledge light your path!",
+          "Come back anytime you need information!"
+        ]
+      },
+      "schedule": [
+        { "time": "09:00", "action": "open_library", "location": "ironforge_library" },
+        { "time": "10:00", "action": "cataloging", "location": "library_back" },
+        { "time": "12:00", "action": "lunch_at_desk", "location": "ironforge_library" },
+        { "time": "13:00", "action": "research", "location": "ironforge_library" },
+        { "time": "18:00", "action": "close_library", "location": "ironforge_library" },
+        { "time": "19:00", "action": "personal_reading", "location": "home" }
+      ],
+      "questGiver": true,
+      "quests": ["quest_historical_research"]
+    },
+    {
+      "id": "npc_bjorn",
+      "name": "Bjorn Frostbeard",
+      "type": "innkeeper",
+      "templateId": "innkeeper",
+      "locationId": "frostpeak_inn",
+      "personality": {
+        "traits": ["tough", "storyteller", "protective", "weathered"],
+        "mood": "friendly"
+      },
+      "appearance": "A massive man with a thick frost-white beard and hands like sledgehammers. He wears furs and has the build of someone who's survived harsh mountain winters.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the Frozen Hearth! Come warm yourself by the fire!",
+          "You made it to Frostpeak! Not everyone does. Come in before you freeze!",
+          "A traveler! Good to see a new face. The mountain is lonely this time of year."
+        ],
+        "topics": {
+          "inn": [
+            "My inn keeps the cold out and the warmth in. Best place in Frostpeak, which admittedly isn't saying much.",
+            "Rooms are 8 gold. Includes breakfast and all the firewood you need.",
+            "The stew is always hot, and the beds are always warm. That's my guarantee."
+          ],
+          "mountains": [
+            "These mountains are beautiful but deadly. Respect them or they'll kill you.",
+            "I used to be an adventurer like you. Explored the Crystal Caves, fought ice wolves, the whole thing.",
+            "The peaks are home to all sorts of creatures. Some are dangerous, but most will leave you alone if you don't bother them.",
+            "Strange things happen in the mountains. Lights in the caves, weird sounds at night... been that way for years."
+          ],
+          "stories": [
+            "Let me tell you about the time I fought off a pack of ice wolves with nothing but an axe and determination...",
+            "The Crystal Caves are real, and they're as dangerous as they are beautiful. I've been inside. Lost two fingers to frostbite, but I made it out.",
+            "There's treasure in those caves, sure, but also things that'll freeze you solid before you can scream."
+          ],
+          "advice": [
+            "Don't go into the mountains unprepared. Extra furs, rope, and a good weapon are essential.",
+            "If a storm comes, find shelter immediately. Mountain storms can kill in minutes.",
+            "The trading post has cold-weather gear. Buy some before you head higher up."
+          ]
+        },
+        "farewell": [
+          "May the mountain be kind to you.",
+          "Stay warm and stay alert!",
+          "Come back safe, friend. The hearth is always warm for you."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "stoke_fire", "location": "frostpeak_inn" },
+        { "time": "08:00", "action": "serve_breakfast", "location": "frostpeak_inn" },
+        { "time": "12:00", "action": "tend_bar", "location": "frostpeak_inn" },
+        { "time": "18:00", "action": "serve_dinner", "location": "frostpeak_inn" },
+        { "time": "22:00", "action": "close_common_room", "location": "frostpeak_inn" }
+      ],
+      "inventory": ["room_key", "mountain_stew", "hot_cider"]
+    },
+    {
+      "id": "npc_ingrid",
+      "name": "Ingrid Coldhands",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "frostpeak_trading_post",
+      "personality": {
+        "traits": ["practical", "shrewd", "independent", "knowledgeable"],
+        "mood": "neutral"
+      },
+      "appearance": "A lean woman with weathered skin and sharp eyes. She wears practical furs and always seems to be calculating prices in her head.",
+      "dialogue": {
+        "greeting": [
+          "Looking to trade? I've got what you need for mountain survival.",
+          "City folk? You'll need proper gear if you plan to survive up here.",
+          "Welcome to Peak Trader's. What are you buying?"
+        ],
+        "topics": {
+          "trade": [
+            "I deal in furs, ores, and survival supplies. Fair prices, no haggling.",
+            "Trappers and miners come through here regularly. I buy what they find and sell what they need.",
+            "That ore you're carrying - I'll give you a fair price for it. Better than hauling it all the way to Ironforge."
+          ],
+          "mountains": [
+            "The mountains provide if you know where to look. Furs, ores, rare herbs - all valuable.",
+            "Mining is dangerous work. Those who do it earn every copper they make.",
+            "The Crystal Caves are rich with minerals, but also crawling with things that want to kill you."
+          ],
+          "supplies": [
+            "You need climbing gear for the higher peaks. Rope, picks, warm clothing - I've got it all.",
+            "Don't go into the mountains without proper preparation. I've seen too many frozen corpses hauled back to town.",
+            "Cold-weather gear costs more up here, but you need it. Your choice: pay me now or pay with your life later."
+          ]
+        },
+        "farewell": [
+          "Watch yourself out there.",
+          "Good luck. You'll need it.",
+          "Come back when you need more supplies. If you make it back."
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_shop", "location": "frostpeak_trading_post" },
+        { "time": "12:00", "action": "inventory", "location": "storage" },
+        { "time": "13:00", "action": "tending_shop", "location": "frostpeak_trading_post" },
+        { "time": "17:00", "action": "close_shop", "location": "frostpeak_trading_post" },
+        { "time": "18:00", "action": "evening_meal", "location": "home" }
+      ],
+      "inventory": ["fur_pelt", "iron_ore", "climbing_rope", "winter_cloak", "ice_pick"],
+      "merchantType": "trading_post"
+    },
+    {
+      "id": "npc_hermit_torin",
+      "name": "Hermit Torin",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "frostpeak_shrine",
+      "personality": {
+        "traits": ["spiritual", "mysterious", "wise", "solitary"],
+        "mood": "neutral"
+      },
+      "appearance": "An old man with a long beard, wearing simple robes despite the cold. His eyes seem to see more than the physical world.",
+      "dialogue": {
+        "greeting": [
+          "The mountain has brought you here. There are no accidents.",
+          "Greetings, traveler. Seek you wisdom or guidance?",
+          "Peace be upon you. The mountain welcomes those with pure hearts."
+        ],
+        "topics": {
+          "mountain": [
+            "The mountain is alive in ways most don't understand. It has a spirit, ancient and powerful.",
+            "I've lived here for forty years, communing with the mountain's essence.",
+            "Those who respect the mountain are protected. Those who defile it... are not."
+          ],
+          "shrine": [
+            "This shrine has stood for centuries. It's a place of power and peace.",
+            "Make an offering if you wish. The mountain spirit appreciates respect.",
+            "Many come here to pray before venturing into the Crystal Caves. It's wise to ask for protection."
+          ],
+          "caves": [
+            "The Crystal Caves are sacred. Beautiful but dangerous. The crystals themselves are alive with magic.",
+            "Something stirs in the deep places. I've felt it in my meditations. Be careful if you venture there."
+          ],
+          "blessing": [
+            "I can grant the mountain's blessing. It will protect you from the cold and guide your path.",
+            "The blessing costs nothing but a moment of quiet reflection and respect for the mountain."
+          ]
+        },
+        "farewell": [
+          "May the mountain watch over you.",
+          "Go in peace, child of the lowlands.",
+          "The path ahead is yours to walk. Walk it well."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "morning_meditation", "location": "frostpeak_shrine" },
+        { "time": "12:00", "action": "tending_shrine", "location": "frostpeak_shrine" },
+        { "time": "18:00", "action": "evening_prayers", "location": "frostpeak_shrine" },
+        { "time": "22:00", "action": "sleep", "location": "shrine_cave" }
+      ],
+      "services": ["blessing", "guidance"],
+      "questGiver": true,
+      "quests": ["quest_crystal_caves"]
+    },
+    {
+      "id": "npc_captain_nereus",
+      "name": "Captain Nereus",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "aurelia_docks",
+      "personality": {
+        "traits": ["experienced", "authoritative", "fair", "seafaring"],
+        "mood": "neutral"
+      },
+      "appearance": "A weathered sea captain with sun-bronzed skin and a neatly trimmed beard. He wears a captain's coat and has the confident bearing of someone used to command.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to Port Aurelia. Looking for passage or business?",
+          "Another landlubber. What brings you to the docks?",
+          "Aye, what can I do for you?"
+        ],
+        "topics": {
+          "docks": [
+            "I manage these docks. Every ship that comes and goes passes through my office.",
+            "We handle cargo from across the world. Spices from the south, furs from the north, everything.",
+            "The docks are the lifeblood of Port Aurelia. Trade keeps this city prosperous."
+          ],
+          "sea": [
+            "I've sailed these waters for thirty years. Know every current and hidden reef.",
+            "The sea is beautiful but unforgiving. Respect it or it'll kill you.",
+            "Pirate activity has been down lately. The confederacy navy keeps them in check."
+          ],
+          "trade": [
+            "Looking to ship cargo? I can arrange transport. Prices vary by destination and cargo type.",
+            "We get exotic goods from distant lands. Check the marketplace or specialty shops if you're interested.",
+            "Trade routes connect us to a dozen cities. What comes in goes out, what goes out comes back. It's the way of the world."
+          ],
+          "rumors": [
+            "Sailors talk of strange things seen at sea. Lights below the waves, mysterious islands... I take it with salt, personally.",
+            "There's been talk of an abandoned ship spotted drifting near the southern reefs. No one aboard, cargo still in the hold. Strange business."
+          ]
+        },
+        "farewell": [
+          "Fair winds and following seas.",
+          "Watch yourself in the city. Not everyone is honest.",
+          "Come back if you need shipping arranged."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "morning_inspection", "location": "aurelia_docks" },
+        { "time": "09:00", "action": "office_work", "location": "dock_office" },
+        { "time": "12:00", "action": "lunch_at_tavern", "location": "aurelia_tavern" },
+        { "time": "13:00", "action": "managing_docks", "location": "aurelia_docks" },
+        { "time": "18:00", "action": "evening_inspection", "location": "aurelia_docks" },
+        { "time": "20:00", "action": "rest", "location": "home" }
+      ],
+      "services": ["shipping", "passage", "dock_management"]
+    },
+    {
+      "id": "npc_sailor_marcus",
+      "name": "Sailor Marcus",
+      "type": "citizen",
+      "templateId": "citizen",
+      "locationId": "aurelia_docks",
+      "personality": {
+        "traits": ["friendly", "superstitious", "storyteller", "helpful"],
+        "mood": "cheerful"
+      },
+      "appearance": "A young sailor with rope-burn scars on his hands and an easy smile. He wears typical sailor's garb and seems happy to chat.",
+      "dialogue": {
+        "greeting": [
+          "Ho there! Fine day for sailing, isn't it?",
+          "Ahoy! You look like you could use some local knowledge!",
+          "Welcome to the docks! First time in Port Aurelia?"
+        ],
+        "topics": {
+          "sailing": [
+            "Been sailing since I was twelve. It's a hard life but a good one.",
+            "Every voyage is an adventure. You never know what you'll see out on the water.",
+            "The sea can be your friend or your enemy. Sailors learn to read the signs."
+          ],
+          "city": [
+            "Port Aurelia is the best city in the confederacy! Anything you want, you can find it here.",
+            "The marketplace has incredible goods. Spices that'll blow your mind, silks softer than clouds...",
+            "If you want excitement, the docks are the place. Something's always happening."
+          ],
+          "superstitions": [
+            "Never whistle on a ship - it calls up the wind, and not in a good way.",
+            "Sailors have all sorts of traditions. You learn to respect them after seeing strange things at sea.",
+            "There's more in the deep waters than fish and whales. I've seen things I can't explain."
+          ],
+          "rumors": [
+            "They say there's treasure on some of the uninhabited islands. Pirate loot, buried and forgotten.",
+            "Old Salty Jack at the tavern tells the best stories. Some of them might even be true!"
+          ]
+        },
+        "farewell": [
+          "Fair winds, friend!",
+          "May your anchor be heavy and your voyage swift!",
+          "Come back and I'll tell you more sea stories!"
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "dock_work", "location": "aurelia_docks" },
+        { "time": "12:00", "action": "lunch_break", "location": "docks" },
+        { "time": "13:00", "action": "dock_work", "location": "aurelia_docks" },
+        { "time": "18:00", "action": "off_duty", "location": "aurelia_tavern" },
+        { "time": "22:00", "action": "sleep", "location": "sailor_bunk" }
+      ]
+    },
+    {
+      "id": "npc_merchant_zara",
+      "name": "Zara the Trader",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "aurelia_marketplace",
+      "personality": {
+        "traits": ["charismatic", "shrewd", "energetic", "persuasive"],
+        "mood": "cheerful"
+      },
+      "appearance": "A woman wearing colorful robes and jewelry that jingles when she moves. Her eyes are sharp and assess the value of everything.",
+      "dialogue": {
+        "greeting": [
+          "Come, come! The finest goods in all of Port Aurelia!",
+          "Welcome, welcome! You have excellent taste - I can tell!",
+          "Ah, a discerning customer! Let me show you something special!"
+        ],
+        "topics": {
+          "goods": [
+            "I have items from across the confederacy and beyond! Spices, fabrics, tools, curiosities!",
+            "Everything in my stall is authentic and high quality. Zara doesn't deal in inferior merchandise.",
+            "Looking for something specific? I probably have it, or I know someone who does."
+          ],
+          "haggling": [
+            "Haggling is expected in the bazaar! It's part of the experience!",
+            "You drive a hard bargain, but I respect that. Let's make a deal!",
+            "For you, my friend, a special price. Today only!"
+          ],
+          "city": [
+            "The marketplace is the heart of Port Aurelia. You can find anything here!",
+            "I've been trading in this bazaar for fifteen years. I know everyone and everything that happens.",
+            "Port Aurelia attracts merchants from across the world. It's a true melting pot of cultures."
+          ]
+        },
+        "farewell": [
+          "Come back soon! I'll have new stock tomorrow!",
+          "May your purse stay heavy!",
+          "Tell your friends about Zara's stall!"
+        ]
+      },
+      "schedule": [
+        { "time": "07:00", "action": "setup_stall", "location": "aurelia_marketplace" },
+        { "time": "08:00", "action": "selling", "location": "aurelia_marketplace" },
+        { "time": "12:00", "action": "lunch_at_stall", "location": "aurelia_marketplace" },
+        { "time": "13:00", "action": "selling", "location": "aurelia_marketplace" },
+        { "time": "19:00", "action": "pack_up", "location": "aurelia_marketplace" },
+        { "time": "20:00", "action": "home", "location": "home" }
+      ],
+      "inventory": ["spices", "fabrics", "pottery", "tools"],
+      "merchantType": "general"
+    },
+    {
+      "id": "npc_food_vendor_hassan",
+      "name": "Hassan the Cook",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "aurelia_marketplace",
+      "personality": {
+        "traits": ["jovial", "generous", "proud", "skilled"],
+        "mood": "friendly"
+      },
+      "appearance": "A rotund man with a stained apron and a constant smile. The smell of delicious cooking follows him everywhere.",
+      "dialogue": {
+        "greeting": [
+          "Hungry? You've come to the right place!",
+          "Fresh food, cooked to perfection! What would you like?",
+          "The best food in the marketplace, guaranteed!"
+        ],
+        "topics": {
+          "food": [
+            "I learned to cook from my mother, who learned from her mother. Three generations of recipes!",
+            "Every dish is made fresh. I never serve day-old food.",
+            "Try the spiced lamb! It's my specialty, and customers come back for it again and again.",
+            "Food is love made edible. That's my philosophy."
+          ],
+          "ingredients": [
+            "I buy the freshest ingredients every morning. Quality matters!",
+            "The spices I use come from across the confederacy. Each one adds something special.",
+            "Desert herbs have unique flavors you won't find anywhere else."
+          ],
+          "recommendations": [
+            "If you want something filling, get the meat platter. If you want something exotic, try the spiced rice.",
+            "Don't leave without trying the honey cakes. They're legendary!",
+            "I make special meals for adventurers - food that'll keep you energized for hours."
+          ]
+        },
+        "farewell": [
+          "Enjoy your meal!",
+          "Come back when you're hungry again!",
+          "May your belly always be full!"
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "prep_ingredients", "location": "home" },
+        { "time": "08:00", "action": "cooking_selling", "location": "aurelia_marketplace" },
+        { "time": "12:00", "action": "lunch_rush", "location": "aurelia_marketplace" },
+        { "time": "18:00", "action": "pack_up", "location": "aurelia_marketplace" },
+        { "time": "19:00", "action": "rest", "location": "home" }
+      ],
+      "inventory": ["spiced_lamb", "honey_cakes", "fruit_platter", "spiced_rice"],
+      "merchantType": "food"
+    },
+    {
+      "id": "npc_lady_selene",
+      "name": "Lady Selene",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "aurelia_exotic_goods",
+      "personality": {
+        "traits": ["mysterious", "knowledgeable", "elegant", "shrewd"],
+        "mood": "neutral"
+      },
+      "appearance": "An elegant woman of indeterminate age, wearing fine robes adorned with mystical symbols. Her eyes seem to glow faintly in dim light.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the Gilded Scarab. I deal only in the extraordinary.",
+          "Ah, a customer with taste. What seeks you?",
+          "Not everyone who enters can afford what I sell. But please, look around."
+        ],
+        "topics": {
+          "shop": [
+            "My shop specializes in magical items, rare artifacts, and curiosities from ancient civilizations.",
+            "Every item here has a story. Some are safer than others.",
+            "I have connections throughout the confederacy and beyond. If something exists, I can likely acquire it. For a price."
+          ],
+          "magic": [
+            "Magic is a tool, like any other. It requires knowledge and respect to use properly.",
+            "Enchanted items are worth the gold. A weapon that never dulls, armor that repairs itself - these are investments.",
+            "Be wary of cursed items. They're rare in my shop, but they exist. Always ask before purchasing something powerful."
+          ],
+          "artifacts": [
+            "Ancient artifacts are my passion. The old civilizations knew secrets we've lost.",
+            "I can appraise any item you bring me. My expertise is unmatched in the confederacy.",
+            "Some artifacts are better left buried. But for the right price and the right person, I'll part with almost anything."
+          ],
+          "warning": [
+            "Power comes with responsibility. Don't purchase what you can't control.",
+            "Some seek artifacts for knowledge, others for power. I judge neither, but I remember my customers."
+          ]
+        },
+        "farewell": [
+          "Use your purchase wisely.",
+          "May magic serve you well.",
+          "Return when you seek something... special."
+        ]
+      },
+      "schedule": [
+        { "time": "10:00", "action": "open_shop", "location": "aurelia_exotic_goods" },
+        { "time": "12:00", "action": "cataloging", "location": "back_room" },
+        { "time": "14:00", "action": "tending_shop", "location": "aurelia_exotic_goods" },
+        { "time": "18:00", "action": "close_shop", "location": "aurelia_exotic_goods" },
+        { "time": "20:00", "action": "research", "location": "private_study" }
+      ],
+      "inventory": ["enchanted_dagger", "ring_of_protection", "healing_amulet", "ancient_scroll"],
+      "merchantType": "exotic",
+      "questGiver": true,
+      "quests": ["quest_artifact_recovery"]
+    },
+    {
+      "id": "npc_salty_jack",
+      "name": "Salty Jack",
+      "type": "innkeeper",
+      "templateId": "innkeeper",
+      "locationId": "aurelia_tavern",
+      "personality": {
+        "traits": ["rowdy", "storyteller", "experienced", "colorful"],
+        "mood": "cheerful"
+      },
+      "appearance": "An old sailor with an eyepatch, tattoos covering his arms, and a booming laugh. He limps slightly and has a scar across his cheek.",
+      "dialogue": {
+        "greeting": [
+          "Ahoy, matey! Welcome to the Siren's Call!",
+          "Aye, come in! The rum's strong and the music's loud!",
+          "Another landlubber! Pull up a chair and I'll tell you a tale!"
+        ],
+        "topics": {
+          "tavern": [
+            "This tavern's been my life for ten years now. Before that, I sailed the seas.",
+            "We serve the best seafood in Port Aurelia. Fresh from the catch every morning!",
+            "Music and rum - that's what life's about! Well, that and adventure!"
+          ],
+          "pirate": [
+            "Pirate? Me? Well... I wasn't always on the legal side of things, if you catch my meaning.",
+            "I sailed with some of the most notorious pirates of my day. Lived to tell about it, which is more than most can say.",
+            "Those days are behind me now. Running a tavern is safer and the rum's better!"
+          ],
+          "stories": [
+            "Let me tell you about the time we fought off three navy ships with half a crew!",
+            "I once found a treasure chest on a deserted island. Turned out to be full of somebody's laundry. The look on our faces!",
+            "The sea holds mysteries you land-folk can't imagine. I've seen things that'd make your hair white."
+          ],
+          "advice": [
+            "If you're heading out to sea, bring someone who knows the waters. First-timers drown.",
+            "Never trust a pirate, but always buy a sailor a drink. You might learn something useful.",
+            "The Siren's Call isn't just a clever name. Sailors say they hear songs from the deep water. Stay on the ship at night."
+          ]
+        },
+        "farewell": [
+          "Fair winds and full sails!",
+          "Come back when you want to hear more stories!",
+          "May the tide always turn in your favor!"
+        ]
+      },
+      "schedule": [
+        { "time": "12:00", "action": "open_tavern", "location": "aurelia_tavern" },
+        { "time": "14:00", "action": "lunch_service", "location": "aurelia_tavern" },
+        { "time": "18:00", "action": "dinner_service", "location": "aurelia_tavern" },
+        { "time": "20:00", "action": "evening_entertainment", "location": "aurelia_tavern" },
+        { "time": "02:00", "action": "close_tavern", "location": "aurelia_tavern" }
+      ],
+      "inventory": ["spiced_rum", "seafood_platter", "room_key"]
+    },
+    {
+      "id": "npc_high_priest_oceanus",
+      "name": "High Priest Oceanus",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "aurelia_temple",
+      "personality": {
+        "traits": ["serene", "wise", "spiritual", "compassionate"],
+        "mood": "friendly"
+      },
+      "appearance": "A tall man with sea-blue robes and a calm demeanor. He wears shells and coral as symbols of his devotion to the sea gods.",
+      "dialogue": {
+        "greeting": [
+          "The tides bring you here. Welcome to the Temple of the Tides.",
+          "May the sea gods bless your journey. How may I help you?",
+          "The ocean welcomes all who approach with respect and humility."
+        ],
+        "topics": {
+          "temple": [
+            "This temple honors the gods of the sea - their power, their mystery, their gifts.",
+            "Sailors come here before every voyage. We bless them and pray for their safe return.",
+            "The sea is life for Port Aurelia. We prosper because we respect and honor it."
+          ],
+          "healing": [
+            "The sea's power can heal as well as destroy. I channel that power to mend wounds and cure illness.",
+            "Healing is available to all who need it. The sea gods are generous to those in need.",
+            "Water is life. Our healing uses the purifying power of the sacred waters."
+          ],
+          "blessing": [
+            "A sailor's blessing will protect you on water journeys. The price is a small offering to the temple.",
+            "We offer several blessings for different needs. Protection, good fortune, clarity of purpose...",
+            "Blessings work through faith. Believe in the sea's power, and it will aid you."
+          ],
+          "sea_gods": [
+            "The sea gods are ancient and powerful. They can be generous or wrathful.",
+            "Respect the ocean and it will provide. Defile it and face consequences.",
+            "The gods speak through the tides. Those who learn to listen gain wisdom."
+          ]
+        },
+        "farewell": [
+          "May the tides carry you safely.",
+          "Go with the blessing of the sea.",
+          "The ocean watches over those who respect it."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "dawn_prayers", "location": "aurelia_temple" },
+        { "time": "08:00", "action": "healing_services", "location": "aurelia_temple" },
+        { "time": "12:00", "action": "meditation", "location": "temple_shore" },
+        { "time": "14:00", "action": "services", "location": "aurelia_temple" },
+        { "time": "18:00", "action": "evening_prayers", "location": "aurelia_temple" },
+        { "time": "20:00", "action": "rest", "location": "temple_quarters" }
+      ],
+      "services": ["healing", "blessing", "divination"],
+      "inventory": ["holy_water", "sea_blessing_scroll"]
+    },
+    {
+      "id": "npc_guild_master_rashid",
+      "name": "Guild Master Rashid",
+      "type": "questgiver",
+      "templateId": "questgiver",
+      "locationId": "aurelia_guild_hall",
+      "personality": {
+        "traits": ["adventurous", "knowledgeable", "bold", "experienced"],
+        "mood": "friendly"
+      },
+      "appearance": "A weathered man in desert-style clothing with numerous scars and a confident smile. His eyes gleam with the excitement of someone who's seen amazing things.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the southern guild hall! Ready for some real adventure?",
+          "Ah, an adventurer! Excellent! We have exciting opportunities here!",
+          "You look like someone who appreciates a challenge. Good, because I have plenty!"
+        ],
+        "topics": {
+          "guild": [
+            "This guild specializes in desert expeditions and ruin exploration. The confederacy is built on ancient secrets.",
+            "I've explored more ruins than anyone alive. Still finding new ones, too!",
+            "The guild here connects adventurers with scholars, merchants, and nobles who need expertise in dangerous places."
+          ],
+          "ruins": [
+            "The desert is dotted with ruins from civilizations that fell thousands of years ago.",
+            "Ancient ruins hold treasures, knowledge, and dangers in equal measure. Proper preparation is essential.",
+            "I've made my reputation exploring these ruins. Found artifacts that scholars thought were myths!",
+            "Every ruin tells a story. Learning to read those stories can mean the difference between treasure and death."
+          ],
+          "desert": [
+            "The desert is as dangerous as any dungeon. Heat, sandstorms, lack of water - they kill more than monsters do.",
+            "Desert survival is a skill we teach. Don't go unprepared.",
+            "The desert nomads know secrets about surviving out there. Some work with the guild as guides."
+          ],
+          "quests": [
+            "Check the board for expeditions. We've got everything from simple surveys to deep ruin dives.",
+            "Party quests are common here. Ruins are too dangerous to explore alone.",
+            "Some of our quests involve working with scholars and archaeologists. It's not all combat."
+          ]
+        },
+        "farewell": [
+          "May the sands guide you!",
+          "Good hunting, adventurer!",
+          "Come back with stories to tell!"
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_guild", "location": "aurelia_guild_hall" },
+        { "time": "10:00", "action": "managing_expeditions", "location": "guild_office" },
+        { "time": "14:00", "action": "meeting_adventurers", "location": "aurelia_guild_hall" },
+        { "time": "18:00", "action": "evening_planning", "location": "guild_office" },
+        { "time": "20:00", "action": "close_guild", "location": "aurelia_guild_hall" }
+      ],
+      "questGiver": true,
+      "quests": ["quest_ruin_expedition", "quest_party_challenge"]
+    },
+    {
+      "id": "npc_rashida",
+      "name": "Rashida Sandwalker",
+      "type": "innkeeper",
+      "templateId": "innkeeper",
+      "locationId": "sandstone_inn",
+      "personality": {
+        "traits": ["efficient", "knowledgeable", "resourceful", "welcoming"],
+        "mood": "friendly"
+      },
+      "appearance": "A desert-dwelling woman wearing practical desert robes. Her skin is tanned from the sun, and she moves with efficient grace.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the Carved Stone. You've survived the journey here - that's a good start!",
+          "Travelers are always welcome. Come in out of the heat!",
+          "Another visitor to Sandstone. Let me guess - heading deeper into the desert?"
+        ],
+        "topics": {
+          "inn": [
+            "The inn is carved into the cliff, so it stays cool even in the worst heat.",
+            "Rooms are 8 gold. Includes water, which is more valuable than gold out here.",
+            "I know every caravan route and safe path through the desert. That information could save your life."
+          ],
+          "desert": [
+            "The desert is beautiful but merciless. Never underestimate it.",
+            "Water is life out here. Always carry more than you think you need.",
+            "Travel during dawn and dusk. The midday heat can kill you in hours.",
+            "Sandstorms are deadly. If you see one coming, find shelter immediately."
+          ],
+          "caravans": [
+            "Caravans pass through regularly. Traveling with one is safer than going alone.",
+            "The next caravan to Oasis Haven leaves in three days. To Port Aurelia, five days.",
+            "Caravan leaders hire guards. If you're capable, you could earn passage by protecting the goods."
+          ],
+          "ruins": [
+            "Ancient ruins dot the desert. Most are picked clean, but new ones are still being discovered.",
+            "Be careful in ruins. Besides the obvious dangers, there are often traps left by the ancients.",
+            "The ruins near here have strange carvings. Scholars come to study them, adventurers come to loot them."
+          ]
+        },
+        "farewell": [
+          "May the desert be kind to you.",
+          "Safe travels. Come back when you need shelter.",
+          "The Carved Stone will be here when you return. If you return."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "morning_prep", "location": "sandstone_inn" },
+        { "time": "08:00", "action": "serving_breakfast", "location": "sandstone_inn" },
+        { "time": "12:00", "action": "siesta", "location": "private_room" },
+        { "time": "16:00", "action": "inn_duties", "location": "sandstone_inn" },
+        { "time": "20:00", "action": "evening_service", "location": "sandstone_inn" }
+      ],
+      "inventory": ["room_key", "caravan_schedule", "desert_map"]
+    },
+    {
+      "id": "npc_karim",
+      "name": "Karim the Guide",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "sandstone_trading_post",
+      "personality": {
+        "traits": ["knowledgeable", "practical", "survivor", "honest"],
+        "mood": "neutral"
+      },
+      "appearance": "A lean man with desert-weathered skin, wearing practical desert gear. His eyes are alert and assessing.",
+      "dialogue": {
+        "greeting": [
+          "Looking for supplies? You've found the right place.",
+          "Desert Crossroads Trading. What do you need?",
+          "Planning a desert expedition? Let me outfit you properly."
+        ],
+        "topics": {
+          "supplies": [
+            "I sell everything you need to survive in the desert. Water, food, protective gear, maps.",
+            "Don't skimp on water. Bring double what you think you need.",
+            "Desert cloaks reflect the heat. They'll keep you much cooler. Worth every copper.",
+            "Survival kits include water purification tablets, emergency rations, and signal flares. Could save your life."
+          ],
+          "guiding": [
+            "I guide expeditions into the desert. Been doing it for twenty years.",
+            "My rates are fair, and I've never lost a client. Can't say that about other guides.",
+            "I know the locations of every major ruin, oasis, and danger zone in the region.",
+            "If you're going into unknown territory, hire a guide. Pride kills more people than monsters in the desert."
+          ],
+          "desert": [
+            "The desert has rhythms. Learn them or die. It's that simple.",
+            "Night in the desert can be freezing. People forget that and die of exposure.",
+            "Never trust mirages. They'll lead you astray and kill you with false hope."
+          ],
+          "ruins": [
+            "Plenty of ruins within a day's travel. Some mapped, some not.",
+            "The ruins have been here for thousands of years. They'll still be there whether you rush or prepare properly.",
+            "Ancient builders left traps. Pressure plates, falling rocks, worse things. Watch your step."
+          ]
+        },
+        "farewell": [
+          "Stay alive out there.",
+          "Good luck. You'll need it.",
+          "Come back for resupply. If you make it back."
+        ]
+      },
+      "schedule": [
+        { "time": "07:00", "action": "open_trading_post", "location": "sandstone_trading_post" },
+        { "time": "12:00", "action": "midday_rest", "location": "trading_post_back" },
+        { "time": "15:00", "action": "trading", "location": "sandstone_trading_post" },
+        { "time": "19:00", "action": "close_shop", "location": "sandstone_trading_post" },
+        { "time": "20:00", "action": "rest", "location": "home" }
+      ],
+      "inventory": ["water_skin", "desert_cloak", "survival_kit", "desert_map"],
+      "merchantType": "trading_post",
+      "services": ["guiding", "desert_expertise"]
+    },
+    {
+      "id": "npc_merchant_thalia",
+      "name": "Thalia Stonecutter",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "sandstone_general_store",
+      "personality": {
+        "traits": ["practical", "fair", "independent", "resilient"],
+        "mood": "neutral"
+      },
+      "appearance": "A sturdy woman with calloused hands and a no-nonsense demeanor. She wears simple desert clothing and keeps her hair tied back.",
+      "dialogue": {
+        "greeting": [
+          "Canyon Provisions. What do you need?",
+          "Welcome. I stock the essentials.",
+          "Looking for supplies? I keep a good inventory despite being in the middle of nowhere."
+        ],
+        "topics": {
+          "shop": [
+            "I sell general goods. Potions, tools, basic supplies. Nothing fancy, but everything works.",
+            "Prices are higher than in Port Aurelia, but you're paying for convenience and location.",
+            "I buy sellable goods. Fair prices, quick transactions.",
+            "Stock is limited by what caravans bring. I make do with what I have."
+          ],
+          "sandstone": [
+            "Sandstone isn't a big city, but it serves its purpose. A rest stop for travelers, a base for explorers.",
+            "I've lived here for ten years. Came for adventure, stayed because I got tired of moving.",
+            "The carved buildings are amazing. Cool in summer, protected from sandstorms. Ancient people knew what they were doing."
+          ],
+          "desert": [
+            "The desert teaches you to appreciate water, shade, and solid walls between you and the sand.",
+            "I've seen too many overconfident adventurers head out unprepared. Some come back, many don't.",
+            "Always respect the desert. It's older and tougher than any of us."
+          ]
+        },
+        "farewell": [
+          "Be careful out there.",
+          "Good luck.",
+          "Come back for resupply."
+        ]
+      },
+      "schedule": [
+        { "time": "08:00", "action": "open_shop", "location": "sandstone_general_store" },
+        { "time": "12:00", "action": "inventory", "location": "storage" },
+        { "time": "14:00", "action": "tending_shop", "location": "sandstone_general_store" },
+        { "time": "18:00", "action": "close_shop", "location": "sandstone_general_store" },
+        { "time": "19:00", "action": "personal_time", "location": "home" }
+      ],
+      "inventory": ["health_potion", "stamina_potion", "torch", "rope", "basic_tools"],
+      "merchantType": "general"
+    },
+    {
+      "id": "npc_omar",
+      "name": "Omar the Oasis Keeper",
+      "type": "innkeeper",
+      "templateId": "innkeeper",
+      "locationId": "oasis_inn",
+      "personality": {
+        "traits": ["peaceful", "generous", "wise", "spiritual"],
+        "mood": "friendly"
+      },
+      "appearance": "An elderly man with a serene expression, wearing light desert robes. He moves slowly but with purpose.",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the oasis. Rest and refresh yourself.",
+          "The oasis welcomes all travelers. Peace be upon you.",
+          "You've found sanctuary. The waters are cool and the shade is deep."
+        ],
+        "topics": {
+          "oasis": [
+            "This oasis has sustained travelers for countless generations.",
+            "The waters have healing properties - not magical, but pure and clean. It refreshes body and spirit.",
+            "The oasis is sacred to the nomad tribes. They protect it, and in return, it sustains them.",
+            "All are welcome here, friend and stranger alike. That is our way."
+          ],
+          "inn": [
+            "The Palm Rest offers simple comfort. Clean beds, fresh water, shade from the sun.",
+            "I charge little for rooms. The oasis provides what we need.",
+            "Rest as long as you need. Many travelers are in too much hurry. Sometimes rest is more valuable than speed."
+          ],
+          "desert": [
+            "I've lived in the desert my entire life. It's harsh, but it's home.",
+            "The desert is alive. Not empty, as outsiders think. Full of life, if you know where to look.",
+            "The stars are brightest in the desert. Away from city lights, you can see the whole cosmos."
+          ],
+          "wisdom": [
+            "Haste causes mistakes. Patience brings success. This is especially true in the desert.",
+            "Water is life. Never waste it, always share it. This is the first rule of desert living.",
+            "The journey matters as much as the destination. Learn from your travels."
+          ]
+        },
+        "farewell": [
+          "May the oasis remain in your memory.",
+          "Safe travels, friend. Return anytime.",
+          "Go in peace. The desert respects those who respect it."
+        ]
+      },
+      "schedule": [
+        { "time": "06:00", "action": "morning_prayers", "location": "oasis" },
+        { "time": "08:00", "action": "tend_guests", "location": "oasis_inn" },
+        { "time": "12:00", "action": "siesta", "location": "palm_shade" },
+        { "time": "16:00", "action": "tend_inn", "location": "oasis_inn" },
+        { "time": "20:00", "action": "evening_rest", "location": "oasis_inn" }
+      ],
+      "inventory": ["fresh_water", "dates", "room_key"]
+    },
+    {
+      "id": "npc_nomad_trader_amira",
+      "name": "Amira the Nomad",
+      "type": "merchant",
+      "templateId": "merchant",
+      "locationId": "oasis_bazaar",
+      "personality": {
+        "traits": ["worldly", "mysterious", "fair", "traditional"],
+        "mood": "friendly"
+      },
+      "appearance": "A nomad woman wearing traditional desert garb with intricate patterns. Her hands are adorned with henna, and she has a knowing smile.",
+      "dialogue": {
+        "greeting": [
+          "Greetings, traveler. I offer treasures from the desert.",
+          "Welcome. The nomads have brought goods you won't find in cities.",
+          "The desert provides many things. I sell what we find and make."
+        ],
+        "topics": {
+          "goods": [
+            "Nomad crafts are unique - woven from desert materials, dyed with rare pigments, blessed by tradition.",
+            "These herbs grow only in hidden places. The nomads know where to find them.",
+            "Sand glass is formed when lightning strikes the desert. Beautiful and rare.",
+            "Everything I sell has a story. The nomads respect what the desert gives us."
+          ],
+          "nomads": [
+            "My people travel the desert, following ancient routes and seasonal rhythms.",
+            "We know the desert better than any city dweller. It's in our blood.",
+            "The oasis is one of our gathering points. We trade with travelers and share news.",
+            "Nomad life is hard but free. We answer to no rulers but the desert itself."
+          ],
+          "desert_lore": [
+            "The desert holds many secrets. Ruins from before the cities, creatures that hide from the sun, places of power.",
+            "The nomads pass down stories through generations. Some speak of treasures, others of warnings.",
+            "Not all who wander the desert are lost. Some seek visions, others seek freedom."
+          ],
+          "trade": [
+            "I trade fairly. The nomads value honesty - your word is your bond in the desert.",
+            "City goods interest me. Things we can't make or find in the desert have value.",
+            "My stock changes as the tribes move. What I have today may be gone tomorrow, so buy what calls to you."
+          ]
+        },
+        "farewell": [
+          "May your path be clear and your water never run dry.",
+          "The desert provides for those who respect it. Remember this.",
+          "Until we meet again, traveler."
+        ]
+      },
+      "schedule": [
+        { "time": "07:00", "action": "setup_stall", "location": "oasis_bazaar" },
+        { "time": "08:00", "action": "trading", "location": "oasis_bazaar" },
+        { "time": "12:00", "action": "midday_rest", "location": "palm_shade" },
+        { "time": "15:00", "action": "trading", "location": "oasis_bazaar" },
+        { "time": "19:00", "action": "pack_up", "location": "oasis_bazaar" }
+      ],
+      "inventory": ["nomad_crafts", "desert_herbs", "sand_glass", "woven_goods"],
+      "merchantType": "exotic"
+    }
+  ]
+}

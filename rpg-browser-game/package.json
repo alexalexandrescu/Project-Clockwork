@@ -1,0 +1,16 @@
+{
+  "name": "rpg-browser-game-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.11.0",
+  "scripts": {
+    "dev": "pnpm --filter game dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "mcp:content": "pnpm --filter mcp-content start",
+    "mcp:testing": "pnpm --filter mcp-testing start"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

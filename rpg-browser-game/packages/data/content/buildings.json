@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "description": "Building type definitions and properties",
+
+  "buildingTypes": {
+    "tavern": {
+      "name": "Tavern",
+      "description": "A lively establishment offering food, drink, and lodging",
+      "services": ["inn", "food", "drink", "rumors", "rest"],
+      "defaultOccupants": ["innkeeper", "patrons"],
+      "interiorElements": ["bar_counter", "tables", "fireplace", "stairs_to_rooms"],
+      "atmosphere": "Warm and welcoming, with the smell of ale and cooking food",
+      "typicalItems": ["ale", "wine", "bread", "stew"]
+    },
+
+    "blacksmith": {
+      "name": "Blacksmith",
+      "description": "A forge where weapons and armor are crafted and repaired",
+      "services": ["weapon_sales", "armor_sales", "repairs", "crafting"],
+      "defaultOccupants": ["blacksmith", "apprentice"],
+      "interiorElements": ["forge", "anvil", "weapon_racks", "armor_stands"],
+      "atmosphere": "Hot and loud, with the ring of hammer on metal",
+      "typicalItems": ["iron_sword", "steel_shield", "leather_armor", "iron_ingot"]
+    },
+
+    "general_store": {
+      "name": "General Store",
+      "description": "A shop selling general goods and supplies",
+      "services": ["item_sales", "item_purchase", "supplies"],
+      "defaultOccupants": ["merchant"],
+      "interiorElements": ["shelves", "counter", "storage_room"],
+      "atmosphere": "Neat and organized, with a variety of goods on display",
+      "typicalItems": ["health_potion", "rope", "torch", "backpack"]
+    },
+
+    "temple": {
+      "name": "Temple",
+      "description": "A sacred place of worship and healing",
+      "services": ["healing", "blessing", "resurrection", "prayer"],
+      "defaultOccupants": ["priest", "acolyte"],
+      "interiorElements": ["altar", "pews", "healing_shrine", "offering_box"],
+      "atmosphere": "Peaceful and reverent, with incense in the air",
+      "typicalItems": ["holy_water", "prayer_book", "blessing_scroll"]
+    },
+
+    "guild_hall": {
+      "name": "Guild Hall",
+      "description": "Headquarters for adventurers seeking quests and companionship",
+      "services": ["quests", "party_forming", "training", "notice_board"],
+      "defaultOccupants": ["guild_master", "adventurers"],
+      "interiorElements": ["notice_board", "quest_counter", "training_area", "meeting_rooms"],
+      "atmosphere": "Bustling with activity and adventure-seekers",
+      "typicalItems": ["quest_contracts", "guild_badge", "training_equipment"]
+    },
+
+    "inn": {
+      "name": "Inn",
+      "description": "A quiet establishment focused on providing lodging",
+      "services": ["lodging", "rest", "storage"],
+      "defaultOccupants": ["innkeeper"],
+      "interiorElements": ["reception", "guest_rooms", "common_area"],
+      "atmosphere": "Quiet and comfortable, designed for rest",
+      "typicalItems": ["room_key", "bedroll", "travel_pack"]
+    },
+
+    "trading_post": {
+      "name": "Trading Post",
+      "description": "A frontier establishment for trading and supplies",
+      "services": ["trading", "exotic_goods", "item_purchase", "item_sales"],
+      "defaultOccupants": ["trader"],
+      "interiorElements": ["trading_counter", "storage", "display_cases"],
+      "atmosphere": "Rough and practical, with goods from distant lands",
+      "typicalItems": ["fur_pelt", "exotic_spices", "foreign_weapon", "rare_herbs"]
+    },
+
+    "marketplace": {
+      "name": "Marketplace",
+      "description": "An open-air market with multiple vendors",
+      "services": ["food_sales", "item_sales", "trading"],
+      "defaultOccupants": ["various_merchants"],
+      "interiorElements": ["stalls", "awnings", "crates", "display_tables"],
+      "atmosphere": "Noisy and crowded, full of haggling and activity",
+      "typicalItems": ["fresh_produce", "fabrics", "pottery", "common_goods"]
+    },
+
+    "docks": {
+      "name": "Docks",
+      "description": "A waterfront area for shipping and maritime trade",
+      "services": ["shipping", "exotic_goods", "passage"],
+      "defaultOccupants": ["dock_master", "sailors", "merchants"],
+      "interiorElements": ["piers", "warehouses", "shipping_office", "cargo"],
+      "atmosphere": "Salty air, creaking wood, and the call of seabirds",
+      "typicalItems": ["sailing_rope", "ship_supplies", "seafood", "imported_goods"]
+    },
+
+    "exotic_goods_shop": {
+      "name": "Exotic Goods Shop",
+      "description": "A specialized shop selling rare and unusual items",
+      "services": ["rare_item_sales", "magical_items", "curiosities"],
+      "defaultOccupants": ["exotic_merchant"],
+      "interiorElements": ["display_cases", "locked_cabinets", "mysterious_artifacts"],
+      "atmosphere": "Mysterious and intriguing, with unusual scents and sounds",
+      "typicalItems": ["enchanted_amulet", "rare_potion", "foreign_spice", "ancient_artifact"]
+    },
+
+    "barracks": {
+      "name": "Barracks",
+      "description": "Military quarters for city guards and soldiers",
+      "services": ["security", "bounties", "recruitment"],
+      "defaultOccupants": ["guard_captain", "guards", "soldiers"],
+      "interiorElements": ["training_yard", "armory", "bunks", "command_office"],
+      "atmosphere": "Disciplined and orderly, with the sound of drilling",
+      "typicalItems": ["guard_uniform", "standard_weapon", "patrol_orders"]
+    },
+
+    "library": {
+      "name": "Library",
+      "description": "A repository of knowledge and learning",
+      "services": ["research", "learning", "lore"],
+      "defaultOccupants": ["librarian", "scholars"],
+      "interiorElements": ["bookshelves", "reading_tables", "study_rooms", "archives"],
+      "atmosphere": "Quiet and scholarly, with the smell of old books",
+      "typicalItems": ["ancient_tome", "research_notes", "map", "scroll"]
+    }
+  },
+
+  "buildingCategories": {
+    "commerce": ["blacksmith", "general_store", "trading_post", "marketplace", "exotic_goods_shop"],
+    "hospitality": ["tavern", "inn"],
+    "civic": ["temple", "guild_hall", "barracks", "library"],
+    "trade": ["docks", "marketplace", "trading_post"]
+  }
+}

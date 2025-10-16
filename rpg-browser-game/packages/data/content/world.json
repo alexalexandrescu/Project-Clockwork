@@ -1,0 +1,378 @@
+{
+  "version": "1.0.0",
+  "description": "World data including realms, cities, and buildings",
+
+  "realms": [
+    {
+      "id": "northmarch",
+      "name": "Kingdom of Northmarch",
+      "theme": "medieval",
+      "description": "A prosperous kingdom of rolling hills, dense forests, and snow-capped mountains. Known for its skilled craftsmen, hearty warriors, and warm hospitality. The perfect starting point for new adventurers.",
+      "level": "starter",
+      "recommendedLevel": "1-10",
+      "climate": "temperate with cold winters",
+      "cities": ["ironforge", "frostpeak"],
+      "lore": "Founded three centuries ago by King Marcus the Bold, Northmarch has grown into a beacon of civilization in the northern lands. Its people are hardy and resilient, shaped by long winters and constant vigilance against mountain threats."
+    },
+    {
+      "id": "sunspire",
+      "name": "Sunspire Confederacy",
+      "theme": "desert-coastal",
+      "description": "A confederation of coastal and desert cities united by trade and mutual defense. The warm climate, exotic goods, and vibrant culture attract merchants and adventurers from across the realm. Ancient ruins dot the desert, holding secrets and treasures.",
+      "level": "mid-level",
+      "recommendedLevel": "8-20",
+      "climate": "hot and arid inland, temperate coast",
+      "cities": ["port_aurelia", "sandstone", "oasis_haven"],
+      "lore": "Formed from an alliance of independent city-states, the Sunspire Confederacy thrives on maritime trade and desert caravans. Ancient civilizations once ruled these lands, leaving behind mysterious ruins and powerful artifacts."
+    }
+  ],
+
+  "cities": [
+    {
+      "id": "ironforge",
+      "name": "Ironforge",
+      "realmId": "northmarch",
+      "description": "The capital and largest city of Northmarch, Ironforge is a bustling hub of commerce and craftsmanship. Built at the base of the Iron Mountains, the city is renowned for its master smiths and the quality of its metalwork. Stone buildings line cobbled streets, and the sound of hammers on anvils echoes through the districts.",
+      "population": 15000,
+      "climate": "temperate, cold winters",
+      "government": "Monarchy with a council of guild masters",
+      "notable": "Home to the legendary Ironforge Academy where young warriors train",
+      "buildings": [
+        "ironforge_tavern",
+        "ironforge_blacksmith",
+        "ironforge_general_store",
+        "ironforge_temple",
+        "ironforge_guild_hall",
+        "ironforge_barracks",
+        "ironforge_library"
+      ],
+      "atmosphere": "Industrious and welcoming, with a strong sense of community",
+      "safeZone": true
+    },
+    {
+      "id": "frostpeak",
+      "name": "Frostpeak",
+      "realmId": "northmarch",
+      "description": "A hardy mountain town perched high in the Iron Mountains. Frostpeak serves as a trading post for mountain trappers, miners, and adventurers seeking fortune in the dangerous peaks. The air is thin and cold, and snow covers the ground most of the year.",
+      "population": 800,
+      "climate": "alpine, harsh winters",
+      "government": "Elder council",
+      "notable": "Gateway to the legendary Crystal Caves",
+      "buildings": [
+        "frostpeak_inn",
+        "frostpeak_trading_post",
+        "frostpeak_shrine"
+      ],
+      "atmosphere": "Rugged and isolated, with a tight-knit community",
+      "safeZone": true
+    },
+    {
+      "id": "port_aurelia",
+      "name": "Port Aurelia",
+      "realmId": "sunspire",
+      "description": "A magnificent coastal city where azure waters meet golden sands. Port Aurelia is the jewel of the Sunspire Confederacy, its harbor filled with ships from distant lands. White stone buildings with colorful awnings line the waterfront, and the scent of exotic spices fills the air. The city is divided into districts: the bustling docks, the wealthy merchant quarter, and the mysterious old quarter with its ancient architecture.",
+      "population": 25000,
+      "climate": "mediterranean, warm year-round",
+      "government": "Confederacy council of merchant princes",
+      "notable": "The Grand Lighthouse can be seen for miles out to sea",
+      "buildings": [
+        "aurelia_docks",
+        "aurelia_marketplace",
+        "aurelia_exotic_goods",
+        "aurelia_tavern",
+        "aurelia_temple",
+        "aurelia_guild_hall"
+      ],
+      "atmosphere": "Cosmopolitan and vibrant, with diverse cultures mixing",
+      "safeZone": true
+    },
+    {
+      "id": "sandstone",
+      "name": "Sandstone",
+      "realmId": "sunspire",
+      "description": "Built into the cliffs of a desert canyon, Sandstone is a marvel of ancient engineering. The city's buildings are carved directly into the red rock, providing natural cooling from the desert heat. It serves as a waypoint for caravans crossing the desert and a base for expeditions to nearby ruins.",
+      "population": 3000,
+      "climate": "hot desert",
+      "government": "Merchant council",
+      "notable": "The ancient aqueduct still provides fresh water from mountain springs",
+      "buildings": [
+        "sandstone_inn",
+        "sandstone_trading_post",
+        "sandstone_general_store"
+      ],
+      "atmosphere": "Ancient and mysterious, with hints of lost civilizations",
+      "safeZone": true
+    },
+    {
+      "id": "oasis_haven",
+      "name": "Oasis Haven",
+      "realmId": "sunspire",
+      "description": "A small settlement built around a lush oasis in the heart of the desert. Palm trees provide shade, and clear water attracts travelers from across the wastes. Though small, it's a vital rest stop and a place where desert nomads trade with city merchants.",
+      "population": 500,
+      "climate": "hot desert",
+      "government": "Tribal elder",
+      "notable": "The oasis waters are said to have minor healing properties",
+      "buildings": [
+        "oasis_inn",
+        "oasis_bazaar"
+      ],
+      "atmosphere": "Peaceful and refreshing, an island of life in the desert",
+      "safeZone": true
+    }
+  ],
+
+  "buildings": [
+    {
+      "id": "ironforge_tavern",
+      "name": "The Hammer & Anvil",
+      "type": "tavern",
+      "cityId": "ironforge",
+      "description": "The most popular tavern in Ironforge, named for the city's proud blacksmithing tradition. A large establishment with a roaring fireplace, sturdy oak tables, and walls decorated with weapons and armor. The ale flows freely, and travelers swap stories late into the night.",
+      "services": ["inn", "food", "drink", "rumors", "rest"],
+      "occupants": ["npc_garrick", "npc_elara"],
+      "interiorDescription": "Warm and inviting, with the smell of roasted meat and fresh bread. A bard's corner sits near the fireplace, and rooms are available upstairs.",
+      "openHours": "06:00-23:00",
+      "specialties": ["mountain_ale", "roasted_boar", "iron_stew"]
+    },
+    {
+      "id": "ironforge_blacksmith",
+      "name": "Ironforge Smithy",
+      "type": "blacksmith",
+      "cityId": "ironforge",
+      "description": "The finest smithy in the kingdom, run by master blacksmith Thorin Ironhammer. The forge burns day and night, producing weapons and armor of exceptional quality. The heat from the forge warms the street outside.",
+      "services": ["weapon_sales", "armor_sales", "repairs", "crafting"],
+      "occupants": ["npc_thorin"],
+      "interiorDescription": "Dominated by a massive forge and anvil. Weapons line the walls, and the air shimmers with heat.",
+      "openHours": "08:00-18:00",
+      "specialties": ["iron_sword", "steel_armor", "dwarven_axe"]
+    },
+    {
+      "id": "ironforge_general_store",
+      "name": "Northmarch Goods & Supplies",
+      "type": "general_store",
+      "cityId": "ironforge",
+      "description": "A well-stocked general store selling everything an adventurer needs. Neat rows of shelves hold potions, tools, and supplies. The proprietor, Mara, knows where everything is and can find any item in seconds.",
+      "services": ["item_sales", "item_purchase", "supplies"],
+      "occupants": ["npc_mara"],
+      "interiorDescription": "Clean and organized, with labeled shelves and a large counter. A backroom holds additional inventory.",
+      "openHours": "08:00-18:00",
+      "specialties": ["health_potion", "rope", "torch", "travel_supplies"]
+    },
+    {
+      "id": "ironforge_temple",
+      "name": "Temple of the Dawn",
+      "type": "temple",
+      "cityId": "ironforge",
+      "description": "A beautiful stone temple dedicated to the gods of light and healing. Stained glass windows cast colorful patterns across the floor, and a sense of peace pervades the space. Priests offer healing and blessings to those in need.",
+      "services": ["healing", "blessing", "resurrection", "prayer"],
+      "occupants": ["npc_priestess_lyra"],
+      "interiorDescription": "Serene and reverent, with an altar adorned with candles and offerings. Pews face the altar, and healing shrines line the walls.",
+      "openHours": "06:00-20:00",
+      "specialties": ["full_healing", "blessing_of_strength", "resurrection"]
+    },
+    {
+      "id": "ironforge_guild_hall",
+      "name": "Adventurer's Guild of Ironforge",
+      "type": "guild_hall",
+      "cityId": "ironforge",
+      "description": "The local branch of the renowned Adventurer's Guild. A large notice board displays available quests, and the hall is always busy with adventurers planning expeditions, training, or celebrating victories.",
+      "services": ["quests", "party_forming", "training", "notice_board"],
+      "occupants": ["npc_guild_master_aldric", "npc_trainer_brynn"],
+      "interiorDescription": "Bustling with activity. The notice board dominates one wall, training dummies stand in a corner, and tables are covered with maps and quest documents.",
+      "openHours": "07:00-22:00",
+      "specialties": ["quest_board", "skill_training", "party_recruitment"]
+    },
+    {
+      "id": "ironforge_barracks",
+      "name": "Ironforge City Guard Barracks",
+      "type": "barracks",
+      "cityId": "ironforge",
+      "description": "The headquarters of the city guard. A functional building with a training yard where guards practice combat techniques. The guard captain maintains order in the city and posts bounties for dangerous criminals.",
+      "services": ["security", "bounties", "recruitment"],
+      "occupants": ["npc_captain_roderick", "npc_guard_finn"],
+      "interiorDescription": "Orderly and military. Weapon racks, training equipment, and guard bunks fill the space.",
+      "openHours": "Always open",
+      "specialties": ["bounty_board", "city_security"]
+    },
+    {
+      "id": "ironforge_library",
+      "name": "The Great Library of Ironforge",
+      "type": "library",
+      "cityId": "ironforge",
+      "description": "A repository of knowledge containing books on history, magic, monsters, and more. The elderly librarian, Scholar Aldwyn, has spent decades cataloging the collection and is always willing to help researchers.",
+      "services": ["research", "learning", "lore"],
+      "occupants": ["npc_scholar_aldwyn"],
+      "interiorDescription": "Quiet and orderly, with towering bookshelves reaching toward vaulted ceilings. Reading tables with oil lamps provide study spaces.",
+      "openHours": "09:00-18:00",
+      "specialties": ["monster_lore", "historical_records", "magical_research"]
+    },
+    {
+      "id": "frostpeak_inn",
+      "name": "The Frozen Hearth",
+      "type": "inn",
+      "cityId": "frostpeak",
+      "description": "A cozy mountain inn with thick walls to keep out the cold. The hearth fire never goes out, and the rooms are small but comfortable. The innkeeper, Bjorn, is a former adventurer with many tales to tell.",
+      "services": ["lodging", "rest", "food", "rumors"],
+      "occupants": ["npc_bjorn"],
+      "interiorDescription": "Warm despite the cold outside, with fur rugs and a crackling fire. The common room has low ceilings and heavy timbers.",
+      "openHours": "Always open",
+      "specialties": ["mountain_stew", "hot_cider", "warm_beds"]
+    },
+    {
+      "id": "frostpeak_trading_post",
+      "name": "Peak Trader's Post",
+      "type": "trading_post",
+      "cityId": "frostpeak",
+      "description": "A frontier trading post dealing in furs, ores, and mountain supplies. The trader, Ingrid, has connections with trappers and miners throughout the peaks and always has interesting goods.",
+      "services": ["trading", "item_sales", "item_purchase"],
+      "occupants": ["npc_ingrid"],
+      "interiorDescription": "Rough and practical, with furs hanging from rafters and crates of ore samples. A counter divides the shop from the storage area.",
+      "openHours": "08:00-17:00",
+      "specialties": ["fur_pelts", "iron_ore", "climbing_gear"]
+    },
+    {
+      "id": "frostpeak_shrine",
+      "name": "Shrine of the Mountain",
+      "type": "temple",
+      "cityId": "frostpeak",
+      "description": "A small shrine carved into the mountainside, dedicated to the spirit of the mountain. Local traditions hold that offerings here bring safe passage through the peaks.",
+      "services": ["blessing", "prayer"],
+      "occupants": ["npc_hermit_torin"],
+      "interiorDescription": "Simple and austere, open to the elements on one side with a view of the valley below. Stone offerings cover a natural altar.",
+      "openHours": "Always open",
+      "specialties": ["mountain_blessing", "safe_travel_prayer"]
+    },
+    {
+      "id": "aurelia_docks",
+      "name": "Port Aurelia Dockside",
+      "type": "docks",
+      "cityId": "port_aurelia",
+      "description": "A sprawling waterfront filled with ships from across the world. Sailors, merchants, and dock workers create a constant buzz of activity. The dock master, Captain Nereus, keeps everything running smoothly.",
+      "services": ["shipping", "exotic_goods", "passage", "rumors"],
+      "occupants": ["npc_captain_nereus", "npc_sailor_marcus"],
+      "interiorDescription": "Open to the sea air, with the creak of ships and cry of gulls. Warehouses line the docks, and cargo is constantly being loaded and unloaded.",
+      "openHours": "Always open",
+      "specialties": ["sea_travel", "imported_goods", "shipping_contracts"]
+    },
+    {
+      "id": "aurelia_marketplace",
+      "name": "Aurelia Grand Bazaar",
+      "type": "marketplace",
+      "cityId": "port_aurelia",
+      "description": "A vast open-air market where merchants sell everything imaginable. Colorful awnings shade the stalls, and the air is filled with the calls of vendors and the scent of spices. Haggling is expected and encouraged.",
+      "services": ["food_sales", "item_sales", "trading"],
+      "occupants": ["npc_merchant_zara", "npc_food_vendor_hassan"],
+      "interiorDescription": "Chaotic and colorful, with narrow aisles between packed stalls. Every type of good is represented, from food to fabrics to curiosities.",
+      "openHours": "07:00-19:00",
+      "specialties": ["fresh_produce", "spices", "textiles", "local_crafts"]
+    },
+    {
+      "id": "aurelia_exotic_goods",
+      "name": "The Gilded Scarab",
+      "type": "exotic_goods_shop",
+      "cityId": "port_aurelia",
+      "description": "An upscale shop specializing in rare and magical items. The mysterious proprietor, Lady Selene, has connections throughout the confederacy and beyond. Her shop is known for having items that can't be found elsewhere.",
+      "services": ["rare_item_sales", "magical_items", "appraisals"],
+      "occupants": ["npc_lady_selene"],
+      "interiorDescription": "Luxurious and mysterious, with locked display cases containing glowing artifacts and ancient relics. Incense burns, creating an otherworldly atmosphere.",
+      "openHours": "10:00-18:00",
+      "specialties": ["enchanted_weapons", "rare_potions", "ancient_artifacts"]
+    },
+    {
+      "id": "aurelia_tavern",
+      "name": "The Siren's Call",
+      "type": "tavern",
+      "cityId": "port_aurelia",
+      "description": "A lively waterfront tavern frequented by sailors and adventurers. Music plays most nights, and the rum flows freely. The tavern keeper, Salty Jack, is a former pirate with a colorful past.",
+      "services": ["inn", "food", "drink", "rumors", "entertainment"],
+      "occupants": ["npc_salty_jack"],
+      "interiorDescription": "Rowdy and energetic, with nautical decorations and a bar made from a ship's deck. The air smells of salt, rum, and fried fish.",
+      "openHours": "12:00-02:00",
+      "specialties": ["spiced_rum", "seafood_platter", "sea_shanties"]
+    },
+    {
+      "id": "aurelia_temple",
+      "name": "Temple of the Tides",
+      "type": "temple",
+      "cityId": "port_aurelia",
+      "description": "A temple dedicated to the sea gods, built with white marble and decorated with shells and coral. Sailors come here to pray for safe voyages, and the priests offer healing to all who need it.",
+      "services": ["healing", "blessing", "prayer", "divination"],
+      "occupants": ["npc_high_priest_oceanus"],
+      "interiorDescription": "Cool and peaceful, with the sound of water flowing through decorative channels. Statues of sea creatures guard the altar.",
+      "openHours": "06:00-20:00",
+      "specialties": ["sailor_blessing", "tide_divination", "water_healing"]
+    },
+    {
+      "id": "aurelia_guild_hall",
+      "name": "Sunspire Adventurer's Guild",
+      "type": "guild_hall",
+      "cityId": "port_aurelia",
+      "description": "The southern branch of the Adventurer's Guild, specializing in desert expeditions and ruin exploration. The guild master, Rashid the Bold, is famous for his discoveries in ancient tombs.",
+      "services": ["quests", "party_forming", "desert_expeditions", "ruin_maps"],
+      "occupants": ["npc_guild_master_rashid"],
+      "interiorDescription": "Decorated with artifacts from desert ruins. Maps of the confederacy cover the walls, and the quest board focuses on exploration and archaeology.",
+      "openHours": "08:00-20:00",
+      "specialties": ["ruin_expeditions", "desert_survival_training", "artifact_recovery"]
+    },
+    {
+      "id": "sandstone_inn",
+      "name": "The Carved Stone Inn",
+      "type": "inn",
+      "cityId": "sandstone",
+      "description": "Built into the cliff face like the rest of the city, this inn offers cool respite from the desert heat. The innkeeper, Rashida, provides excellent service and knows all the caravan routes.",
+      "services": ["lodging", "rest", "meals", "caravan_info"],
+      "occupants": ["npc_rashida"],
+      "interiorDescription": "Cool and cave-like, carved from red stone. Colorful rugs and cushions provide comfort.",
+      "openHours": "Always open",
+      "specialties": ["desert_fare", "cool_drinks", "caravan_schedules"]
+    },
+    {
+      "id": "sandstone_trading_post",
+      "name": "Desert Crossroads Trading",
+      "type": "trading_post",
+      "cityId": "sandstone",
+      "description": "A vital trading post for caravans. The trader, Karim, deals in water, supplies, and information about desert travel. Many expeditions start here.",
+      "services": ["trading", "supplies", "desert_equipment", "guides"],
+      "occupants": ["npc_karim"],
+      "interiorDescription": "Functional and well-stocked with desert survival gear. Maps of oases and ruins cover one wall.",
+      "openHours": "07:00-19:00",
+      "specialties": ["water_skins", "desert_cloaks", "survival_kits"]
+    },
+    {
+      "id": "sandstone_general_store",
+      "name": "Canyon Provisions",
+      "type": "general_store",
+      "cityId": "sandstone",
+      "description": "A general store carved into the canyon wall, selling basic supplies and some specialty items for desert travelers.",
+      "services": ["item_sales", "item_purchase"],
+      "occupants": ["npc_merchant_thalia"],
+      "interiorDescription": "Carved stone shelves hold various goods. The cool stone keeps items preserved despite the heat.",
+      "openHours": "08:00-18:00",
+      "specialties": ["healing_items", "basic_supplies", "torches"]
+    },
+    {
+      "id": "oasis_inn",
+      "name": "The Palm Rest",
+      "type": "inn",
+      "cityId": "oasis_haven",
+      "description": "A small but comfortable inn built around the oasis. Palm fronds provide shade, and the sound of water creates a peaceful atmosphere.",
+      "services": ["lodging", "rest", "water"],
+      "occupants": ["npc_omar"],
+      "interiorDescription": "Open-air design with canvas walls and palm-frond roof. Simple but comfortable with the oasis visible from every room.",
+      "openHours": "Always open",
+      "specialties": ["fresh_water", "dates", "rest"]
+    },
+    {
+      "id": "oasis_bazaar",
+      "name": "Oasis Bazaar",
+      "type": "marketplace",
+      "cityId": "oasis_haven",
+      "description": "A small bazaar where desert nomads trade with travelers. Unique items from across the desert can be found here.",
+      "services": ["trading", "nomad_goods"],
+      "occupants": ["npc_nomad_trader_amira"],
+      "interiorDescription": "A collection of tents and stalls under palm trees. Goods are laid out on colorful blankets.",
+      "openHours": "Dawn to dusk",
+      "specialties": ["nomad_crafts", "desert_herbs", "sand_glass"]
+    }
+  ]
+}
